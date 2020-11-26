@@ -46,14 +46,50 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Abfahrtsplan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Abfahrtsplan.Designer.cs">
+      <DependentUpon>Abfahrtsplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gespeichert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gespeichert.Designer.cs">
+      <DependentUpon>Gespeichert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Karte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Karte.Designer.cs">
+      <DependentUpon>Karte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Naechste Station.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Naechste Station.Designer.cs">
+      <DependentUpon>Naechste Station.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Verbindungen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Verbindungen.Designer.cs">
+      <DependentUpon>Verbindungen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Abfahrtsplan.resx">
+      <DependentUpon>Abfahrtsplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gespeichert.resx">
+      <DependentUpon>Gespeichert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Karte.resx">
+      <DependentUpon>Karte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Naechste Station.resx">
+      <DependentUpon>Naechste Station.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +99,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Verbindungen.resx">
+      <DependentUpon>Verbindungen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +114,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\SwissTransport\SwissTransport.csproj">
+      <Project>{d0262178-a48f-4de0-807b-e76b63e39421}</Project>
+      <Name>SwissTransport</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
