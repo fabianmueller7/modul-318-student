@@ -36,17 +36,17 @@ namespace MyTransportApp
             this.btnNaechsteStation = new System.Windows.Forms.Button();
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
             this.grpboxVerbindungen = new System.Windows.Forms.GroupBox();
-            this.btnsuchen = new System.Windows.Forms.Button();
-            this.txtboxnach = new System.Windows.Forms.TextBox();
-            this.lblnach = new System.Windows.Forms.Label();
-            this.txtboxvon = new System.Windows.Forms.TextBox();
-            this.lblvon = new System.Windows.Forms.Label();
             this.dtagridverbindungen = new System.Windows.Forms.DataGridView();
             this.columnvon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnnach = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnabfahrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columngleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnsuchen = new System.Windows.Forms.Button();
+            this.txtboxnach = new System.Windows.Forms.TextBox();
+            this.lblnach = new System.Windows.Forms.Label();
+            this.txtboxvon = new System.Windows.Forms.TextBox();
+            this.lblvon = new System.Windows.Forms.Label();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -133,48 +133,6 @@ namespace MyTransportApp
             this.grpboxVerbindungen.TabStop = false;
             this.grpboxVerbindungen.Text = "Verbindungssuche";
             // 
-            // btnsuchen
-            // 
-            this.btnsuchen.Location = new System.Drawing.Point(551, 87);
-            this.btnsuchen.Name = "btnsuchen";
-            this.btnsuchen.Size = new System.Drawing.Size(129, 33);
-            this.btnsuchen.TabIndex = 5;
-            this.btnsuchen.Text = "Suchen";
-            this.btnsuchen.UseVisualStyleBackColor = true;
-            this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
-            // 
-            // txtboxnach
-            // 
-            this.txtboxnach.Location = new System.Drawing.Point(571, 34);
-            this.txtboxnach.Name = "txtboxnach";
-            this.txtboxnach.Size = new System.Drawing.Size(100, 26);
-            this.txtboxnach.TabIndex = 3;
-            // 
-            // lblnach
-            // 
-            this.lblnach.AutoSize = true;
-            this.lblnach.Location = new System.Drawing.Point(518, 35);
-            this.lblnach.Name = "lblnach";
-            this.lblnach.Size = new System.Drawing.Size(46, 20);
-            this.lblnach.TabIndex = 2;
-            this.lblnach.Text = "Nach";
-            // 
-            // txtboxvon
-            // 
-            this.txtboxvon.Location = new System.Drawing.Point(70, 40);
-            this.txtboxvon.Name = "txtboxvon";
-            this.txtboxvon.Size = new System.Drawing.Size(100, 26);
-            this.txtboxvon.TabIndex = 1;
-            // 
-            // lblvon
-            // 
-            this.lblvon.AutoSize = true;
-            this.lblvon.Location = new System.Drawing.Point(25, 40);
-            this.lblvon.Name = "lblvon";
-            this.lblvon.Size = new System.Drawing.Size(38, 20);
-            this.lblvon.TabIndex = 0;
-            this.lblvon.Text = "Von";
-            // 
             // dtagridverbindungen
             // 
             this.dtagridverbindungen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -190,6 +148,7 @@ namespace MyTransportApp
             this.dtagridverbindungen.RowTemplate.Height = 28;
             this.dtagridverbindungen.Size = new System.Drawing.Size(674, 193);
             this.dtagridverbindungen.TabIndex = 6;
+            this.dtagridverbindungen.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVerbindungssuchedoppelklick);
             // 
             // columnvon
             // 
@@ -230,6 +189,49 @@ namespace MyTransportApp
             this.Columngleis.Name = "Columngleis";
             this.Columngleis.ReadOnly = true;
             this.Columngleis.Width = 150;
+            // 
+            // btnsuchen
+            // 
+            this.btnsuchen.Location = new System.Drawing.Point(551, 87);
+            this.btnsuchen.Name = "btnsuchen";
+            this.btnsuchen.Size = new System.Drawing.Size(129, 33);
+            this.btnsuchen.TabIndex = 5;
+            this.btnsuchen.Text = "Suchen";
+            this.btnsuchen.UseVisualStyleBackColor = true;
+            this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
+            // 
+            // txtboxnach
+            // 
+            this.txtboxnach.Location = new System.Drawing.Point(571, 34);
+            this.txtboxnach.Name = "txtboxnach";
+            this.txtboxnach.Size = new System.Drawing.Size(100, 26);
+            this.txtboxnach.TabIndex = 3;
+            // 
+            // lblnach
+            // 
+            this.lblnach.AutoSize = true;
+            this.lblnach.Location = new System.Drawing.Point(518, 35);
+            this.lblnach.Name = "lblnach";
+            this.lblnach.Size = new System.Drawing.Size(46, 20);
+            this.lblnach.TabIndex = 2;
+            this.lblnach.Text = "Nach";
+            // 
+            // txtboxvon
+            // 
+            this.txtboxvon.Location = new System.Drawing.Point(70, 40);
+            this.txtboxvon.Name = "txtboxvon";
+            this.txtboxvon.Size = new System.Drawing.Size(100, 26);
+            this.txtboxvon.TabIndex = 1;
+            this.txtboxvon.TextChanged += new System.EventHandler(this.von_textgeaender);
+            // 
+            // lblvon
+            // 
+            this.lblvon.AutoSize = true;
+            this.lblvon.Location = new System.Drawing.Point(25, 40);
+            this.lblvon.Name = "lblvon";
+            this.lblvon.Size = new System.Drawing.Size(38, 20);
+            this.lblvon.TabIndex = 0;
+            this.lblvon.Text = "Von";
             // 
             // Verbindungen
             // 

@@ -57,6 +57,8 @@ namespace MyTransportApp
 
         private void btnsuchen_Click(object sender, EventArgs e)
         {
+            dtagridAbfahrtstagel.Rows.Clear();
+
             Stationssuche neuesuche = new Stationssuche();
             Stationssuche sucheresultat = neuesuche.Abfahrtsplansuche(txtboxstation.Text, neuesuche);
             try
