@@ -36,7 +36,9 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxGespeichert = new System.Windows.Forms.GroupBox();
+            this.lstboxGespeichert = new System.Windows.Forms.ListBox();
             this.grpboxMenue.SuspendLayout();
+            this.grpboxGespeichert.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpboxMenue
@@ -55,13 +57,14 @@ namespace MyTransportApp
             // 
             // btnGespeichert
             // 
+            this.btnGespeichert.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnGespeichert.Enabled = false;
             this.btnGespeichert.Location = new System.Drawing.Point(553, 26);
             this.btnGespeichert.Name = "btnGespeichert";
             this.btnGespeichert.Size = new System.Drawing.Size(126, 36);
             this.btnGespeichert.TabIndex = 4;
             this.btnGespeichert.Text = "Gespeichert";
-            this.btnGespeichert.UseVisualStyleBackColor = true;
+            this.btnGespeichert.UseVisualStyleBackColor = false;
             // 
             // btnNaechsteStation
             // 
@@ -105,12 +108,22 @@ namespace MyTransportApp
             // 
             // grpboxGespeichert
             // 
+            this.grpboxGespeichert.Controls.Add(this.lstboxGespeichert);
             this.grpboxGespeichert.Location = new System.Drawing.Point(48, 120);
             this.grpboxGespeichert.Name = "grpboxGespeichert";
             this.grpboxGespeichert.Size = new System.Drawing.Size(685, 318);
             this.grpboxGespeichert.TabIndex = 1;
             this.grpboxGespeichert.TabStop = false;
             this.grpboxGespeichert.Text = "Gespeichert";
+            // 
+            // lstboxGespeichert
+            // 
+            this.lstboxGespeichert.FormattingEnabled = true;
+            this.lstboxGespeichert.ItemHeight = 20;
+            this.lstboxGespeichert.Location = new System.Drawing.Point(7, 26);
+            this.lstboxGespeichert.Name = "lstboxGespeichert";
+            this.lstboxGespeichert.Size = new System.Drawing.Size(672, 284);
+            this.lstboxGespeichert.TabIndex = 0;
             // 
             // Gespeichert
             // 
@@ -120,8 +133,10 @@ namespace MyTransportApp
             this.Controls.Add(this.grpboxGespeichert);
             this.Controls.Add(this.grpboxMenue);
             this.Name = "Gespeichert";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gespeichert";
             this.grpboxMenue.ResumeLayout(false);
+            this.grpboxGespeichert.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -135,5 +150,6 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnKarte;
         private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxGespeichert;
+        private System.Windows.Forms.ListBox lstboxGespeichert;
     }
 }

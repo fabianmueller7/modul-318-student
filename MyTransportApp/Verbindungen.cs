@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwissTransport;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,22 @@ namespace MyTransportApp
         private void btnVerbindungen_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsuchen_Click(object sender, EventArgs e)
+        {
+            Stationssuche neuesuche = new Stationssuche();
+            string vonStation = txtboxvon.Text;
+            string nachStation = txtboxnach.Text;
+
+            Connections verbindungenrückgabe = neuesuche.Stationverbindungssuche(vonStation, nachStation);
+
+            List<Connection> verbindungrückgabliste = verbindungenrückgabe.ConnectionList;
+
+            foreach (Connection  einzelneverbindung in verbindungrückgabliste)
+            {
+                dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, einzelneverbindung.From.DepartureTimestamp, einzelneverbindung.To.ArrivalTimestamp, einzelneverbindung.To.Platform);
+            }
         }
     }
 }

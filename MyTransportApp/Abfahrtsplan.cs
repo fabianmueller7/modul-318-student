@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SwissTransport;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,6 +53,29 @@ namespace MyTransportApp
         private void btnAbfahrtstafel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnsuchen_Click(object sender, EventArgs e)
+        {
+            Stationssuche neuesuche = new Stationssuche();
+            Stationssuche sucheresultat = neuesuche.Abfahrtsplansuche(txtboxstation.Text, neuesuche);
+            try
+            {
+
+                StationBoardRoot alleverbindungen = sucheresultat.getausgehendeverbindungen();
+
+                List<StationBoard> verbindungsliste = alleverbindungen.Entries;
+
+                foreach (StationBoard Ausgehendeverbindung in verbindungsliste)
+                {
+                    dtagridAbfahrtstagel.Rows.Add(Ausgehendeverbindung.To, Ausgehendeverbindung.Number, Ausgehendeverbindung.Name);
+                }
+            }
+            catch 
+            { 
+                MessageBox.Show("Keine Resultate gefunden!");
+                return; 
+            }
         }
     }
 }

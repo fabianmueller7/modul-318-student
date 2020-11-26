@@ -75,13 +75,14 @@ namespace MyTransportApp
             // 
             // btnKarte
             // 
+            this.btnKarte.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnKarte.Enabled = false;
             this.btnKarte.Location = new System.Drawing.Point(268, 26);
             this.btnKarte.Name = "btnKarte";
             this.btnKarte.Size = new System.Drawing.Size(125, 38);
             this.btnKarte.TabIndex = 2;
             this.btnKarte.Text = "Karte";
-            this.btnKarte.UseVisualStyleBackColor = true;
+            this.btnKarte.UseVisualStyleBackColor = false;
             // 
             // btnAbfahrtstafel
             // 
@@ -120,6 +121,7 @@ namespace MyTransportApp
             this.Controls.Add(this.grpboxKarte);
             this.Controls.Add(this.grpboxmenue);
             this.Name = "Karte";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Karte";
             this.grpboxmenue.ResumeLayout(false);
             this.ResumeLayout(false);

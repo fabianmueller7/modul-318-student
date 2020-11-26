@@ -65,13 +65,14 @@ namespace MyTransportApp
             // 
             // btnNaechsteStation
             // 
+            this.btnNaechsteStation.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnNaechsteStation.Enabled = false;
             this.btnNaechsteStation.Location = new System.Drawing.Point(406, 28);
             this.btnNaechsteStation.Name = "btnNaechsteStation";
             this.btnNaechsteStation.Size = new System.Drawing.Size(145, 37);
             this.btnNaechsteStation.TabIndex = 3;
             this.btnNaechsteStation.Text = "Nächste Station";
-            this.btnNaechsteStation.UseVisualStyleBackColor = true;
+            this.btnNaechsteStation.UseVisualStyleBackColor = false;
             // 
             // btnKarte
             // 
@@ -120,6 +121,7 @@ namespace MyTransportApp
             this.Controls.Add(this.grpboxNaechsteStation);
             this.Controls.Add(this.grpboxmenue);
             this.Name = "Naechste_Station";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Naechste_Station";
             this.grpboxmenue.ResumeLayout(false);
             this.ResumeLayout(false);

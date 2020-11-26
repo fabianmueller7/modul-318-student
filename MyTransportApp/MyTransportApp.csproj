@@ -70,6 +70,7 @@
     <Compile Include="Naechste Station.Designer.cs">
       <DependentUpon>Naechste Station.cs</DependentUpon>
     </Compile>
+    <Compile Include="Station.cs" />
     <Compile Include="Verbindungen.cs">
       <SubType>Form</SubType>
     </Compile>

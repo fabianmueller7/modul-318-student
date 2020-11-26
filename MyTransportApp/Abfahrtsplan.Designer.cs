@@ -36,16 +36,16 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxabfahrtstafel = new System.Windows.Forms.GroupBox();
+            this.dtagridAbfahrtstagel = new System.Windows.Forms.DataGridView();
+            this.columnnach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnenummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colmnname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsuchen = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Von = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Abfahrt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ankunft = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtboxstation = new System.Windows.Forms.TextBox();
             this.lblstation = new System.Windows.Forms.Label();
             this.grpboxmenue.SuspendLayout();
             this.grpboxabfahrtstafel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtagridAbfahrtstagel)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxmenue
@@ -94,13 +94,14 @@ namespace MyTransportApp
             // 
             // btnAbfahrtstafel
             // 
+            this.btnAbfahrtstafel.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnAbfahrtstafel.Enabled = false;
             this.btnAbfahrtstafel.Location = new System.Drawing.Point(145, 25);
             this.btnAbfahrtstafel.Name = "btnAbfahrtstafel";
             this.btnAbfahrtstafel.Size = new System.Drawing.Size(124, 42);
             this.btnAbfahrtstafel.TabIndex = 1;
             this.btnAbfahrtstafel.Text = "Abfahrtstafel";
-            this.btnAbfahrtstafel.UseVisualStyleBackColor = true;
+            this.btnAbfahrtstafel.UseVisualStyleBackColor = false;
             this.btnAbfahrtstafel.Click += new System.EventHandler(this.btnAbfahrtstafel_Click);
             // 
             // btnVerbindungen
@@ -115,8 +116,8 @@ namespace MyTransportApp
             // 
             // grpboxabfahrtstafel
             // 
+            this.grpboxabfahrtstafel.Controls.Add(this.dtagridAbfahrtstagel);
             this.grpboxabfahrtstafel.Controls.Add(this.btnsuchen);
-            this.grpboxabfahrtstafel.Controls.Add(this.listView1);
             this.grpboxabfahrtstafel.Controls.Add(this.txtboxstation);
             this.grpboxabfahrtstafel.Controls.Add(this.lblstation);
             this.grpboxabfahrtstafel.Location = new System.Drawing.Point(48, 112);
@@ -126,28 +127,52 @@ namespace MyTransportApp
             this.grpboxabfahrtstafel.TabStop = false;
             this.grpboxabfahrtstafel.Text = "Abfahrtstafel";
             // 
+            // dtagridAbfahrtstagel
+            // 
+            this.dtagridAbfahrtstagel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtagridAbfahrtstagel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnnach,
+            this.columnenummer,
+            this.colmnname});
+            this.dtagridAbfahrtstagel.Location = new System.Drawing.Point(7, 84);
+            this.dtagridAbfahrtstagel.Name = "dtagridAbfahrtstagel";
+            this.dtagridAbfahrtstagel.RowHeadersWidth = 62;
+            this.dtagridAbfahrtstagel.RowTemplate.Height = 28;
+            this.dtagridAbfahrtstagel.Size = new System.Drawing.Size(678, 236);
+            this.dtagridAbfahrtstagel.TabIndex = 4;
+            // 
+            // columnnach
+            // 
+            this.columnnach.HeaderText = "Nach";
+            this.columnnach.MinimumWidth = 8;
+            this.columnnach.Name = "columnnach";
+            this.columnnach.ReadOnly = true;
+            this.columnnach.Width = 150;
+            // 
+            // columnenummer
+            // 
+            this.columnenummer.HeaderText = "Nummer";
+            this.columnenummer.MinimumWidth = 8;
+            this.columnenummer.Name = "columnenummer";
+            this.columnenummer.ReadOnly = true;
+            this.columnenummer.Width = 150;
+            // 
+            // colmnname
+            // 
+            this.colmnname.HeaderText = "Name";
+            this.colmnname.MinimumWidth = 8;
+            this.colmnname.Name = "colmnname";
+            this.colmnname.Width = 150;
+            // 
             // btnsuchen
             // 
-            this.btnsuchen.Location = new System.Drawing.Point(583, 50);
+            this.btnsuchen.Location = new System.Drawing.Point(238, 35);
             this.btnsuchen.Name = "btnsuchen";
             this.btnsuchen.Size = new System.Drawing.Size(102, 30);
             this.btnsuchen.TabIndex = 3;
             this.btnsuchen.Text = "Suchen";
             this.btnsuchen.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Von,
-            this.Nach,
-            this.Abfahrt,
-            this.Ankunft});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 100);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(679, 220);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
             // 
             // txtboxstation
             // 
@@ -173,10 +198,12 @@ namespace MyTransportApp
             this.Controls.Add(this.grpboxabfahrtstafel);
             this.Controls.Add(this.grpboxmenue);
             this.Name = "Abfahrtsplan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Abfahrtsplan";
             this.grpboxmenue.ResumeLayout(false);
             this.grpboxabfahrtstafel.ResumeLayout(false);
             this.grpboxabfahrtstafel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtagridAbfahrtstagel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -190,13 +217,12 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnNaechStestation;
         private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxabfahrtstafel;
-        private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.TextBox txtboxstation;
         private System.Windows.Forms.Label lblstation;
         private System.Windows.Forms.Button btnsuchen;
-        private System.Windows.Forms.ColumnHeader Von;
-        private System.Windows.Forms.ColumnHeader Nach;
-        private System.Windows.Forms.ColumnHeader Abfahrt;
-        private System.Windows.Forms.ColumnHeader Ankunft;
+        private System.Windows.Forms.DataGridView dtagridAbfahrtstagel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnnach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnenummer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colmnname;
     }
 }

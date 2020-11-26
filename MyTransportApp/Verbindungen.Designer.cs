@@ -37,28 +37,31 @@ namespace MyTransportApp
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
             this.grpboxVerbindungen = new System.Windows.Forms.GroupBox();
             this.btnsuchen = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.Von = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Nach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Abfahrt = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Ankunft = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtboxnach = new System.Windows.Forms.TextBox();
             this.lblnach = new System.Windows.Forms.Label();
             this.txtboxvon = new System.Windows.Forms.TextBox();
             this.lblvon = new System.Windows.Forms.Label();
+            this.dtagridverbindungen = new System.Windows.Forms.DataGridView();
+            this.columnvon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnnach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnabfahrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Columngleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVerbindungen
             // 
+            this.btnVerbindungen.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.btnVerbindungen.Enabled = false;
             this.btnVerbindungen.Location = new System.Drawing.Point(6, 25);
             this.btnVerbindungen.Name = "btnVerbindungen";
             this.btnVerbindungen.Size = new System.Drawing.Size(129, 42);
             this.btnVerbindungen.TabIndex = 0;
             this.btnVerbindungen.Text = "Verbindungen";
-            this.btnVerbindungen.UseVisualStyleBackColor = true;
+            this.btnVerbindungen.UseVisualStyleBackColor = false;
             this.btnVerbindungen.Click += new System.EventHandler(this.btnVerbindungen_Click);
             // 
             // btnAbfahrtstafel
@@ -117,8 +120,8 @@ namespace MyTransportApp
             // 
             // grpboxVerbindungen
             // 
+            this.grpboxVerbindungen.Controls.Add(this.dtagridverbindungen);
             this.grpboxVerbindungen.Controls.Add(this.btnsuchen);
-            this.grpboxVerbindungen.Controls.Add(this.listView1);
             this.grpboxVerbindungen.Controls.Add(this.txtboxnach);
             this.grpboxVerbindungen.Controls.Add(this.lblnach);
             this.grpboxVerbindungen.Controls.Add(this.txtboxvon);
@@ -138,20 +141,7 @@ namespace MyTransportApp
             this.btnsuchen.TabIndex = 5;
             this.btnsuchen.Text = "Suchen";
             this.btnsuchen.UseVisualStyleBackColor = true;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Von,
-            this.Nach,
-            this.Abfahrt,
-            this.Ankunft});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 126);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(674, 198);
-            this.listView1.TabIndex = 4;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
             // 
             // txtboxnach
             // 
@@ -185,6 +175,62 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
+            // dtagridverbindungen
+            // 
+            this.dtagridverbindungen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtagridverbindungen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnvon,
+            this.columnnach,
+            this.columnabfahrt,
+            this.columnankunft,
+            this.Columngleis});
+            this.dtagridverbindungen.Location = new System.Drawing.Point(11, 126);
+            this.dtagridverbindungen.Name = "dtagridverbindungen";
+            this.dtagridverbindungen.RowHeadersWidth = 62;
+            this.dtagridverbindungen.RowTemplate.Height = 28;
+            this.dtagridverbindungen.Size = new System.Drawing.Size(674, 193);
+            this.dtagridverbindungen.TabIndex = 6;
+            // 
+            // columnvon
+            // 
+            this.columnvon.HeaderText = "Von";
+            this.columnvon.MinimumWidth = 8;
+            this.columnvon.Name = "columnvon";
+            this.columnvon.ReadOnly = true;
+            this.columnvon.Width = 150;
+            // 
+            // columnnach
+            // 
+            this.columnnach.HeaderText = "Nach";
+            this.columnnach.MinimumWidth = 8;
+            this.columnnach.Name = "columnnach";
+            this.columnnach.ReadOnly = true;
+            this.columnnach.Width = 150;
+            // 
+            // columnabfahrt
+            // 
+            this.columnabfahrt.HeaderText = "Abfahrt";
+            this.columnabfahrt.MinimumWidth = 8;
+            this.columnabfahrt.Name = "columnabfahrt";
+            this.columnabfahrt.ReadOnly = true;
+            this.columnabfahrt.Width = 150;
+            // 
+            // columnankunft
+            // 
+            this.columnankunft.HeaderText = "Ankunft";
+            this.columnankunft.MinimumWidth = 8;
+            this.columnankunft.Name = "columnankunft";
+            this.columnankunft.ReadOnly = true;
+            this.columnankunft.Width = 150;
+            // 
+            // Columngleis
+            // 
+            this.Columngleis.HeaderText = "Gleis";
+            this.Columngleis.MinimumWidth = 8;
+            this.Columngleis.Name = "Columngleis";
+            this.Columngleis.ReadOnly = true;
+            this.Columngleis.Width = 150;
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -193,10 +239,12 @@ namespace MyTransportApp
             this.Controls.Add(this.grpboxVerbindungen);
             this.Controls.Add(this.grpboxmenue);
             this.Name = "Verbindungen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Verbindungen";
             this.grpboxmenue.ResumeLayout(false);
             this.grpboxVerbindungen.ResumeLayout(false);
             this.grpboxVerbindungen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,16 +258,17 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnNaechsteStation;
         private System.Windows.Forms.GroupBox grpboxmenue;
         private System.Windows.Forms.GroupBox grpboxVerbindungen;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader Von;
-        private System.Windows.Forms.ColumnHeader Nach;
-        private System.Windows.Forms.ColumnHeader Abfahrt;
-        private System.Windows.Forms.ColumnHeader Ankunft;
         private System.Windows.Forms.TextBox txtboxnach;
         private System.Windows.Forms.Label lblnach;
         private System.Windows.Forms.TextBox txtboxvon;
         private System.Windows.Forms.Label lblvon;
         private System.Windows.Forms.Button btnsuchen;
+        private System.Windows.Forms.DataGridView dtagridverbindungen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnvon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnnach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnabfahrt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnankunft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columngleis;
     }
 }
 
