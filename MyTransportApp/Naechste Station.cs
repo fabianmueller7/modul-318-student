@@ -98,7 +98,7 @@ namespace MyTransportApp
                 gmapNaechsteStaion.MaxZoom = 25;
                 gmapNaechsteStaion.Zoom = 15;
                 gmapNaechsteStaion.AutoScroll = true;
-                g
+                
 
                 GMapOverlay markerOverlay = new GMapOverlay("makers");
 
