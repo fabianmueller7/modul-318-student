@@ -126,14 +126,5 @@ namespace MyTransportApp
             comboboxNach.Focus();
             comboboxNach.SelectionStart = comboboxNach.Text.Length;
         }
-
-        private void btnAufKarteAnzeigen_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Karte formKarte = new Karte();
-            formKarte.NeueKarte(comboboxvon.Text, comboboxNach.Text);
-            formKarte.ShowDialog();
-            this.Close();
-        }
     }
 }

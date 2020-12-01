@@ -36,9 +36,9 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxKarte = new System.Windows.Forms.GroupBox();
+            this.btnSucheStaton = new System.Windows.Forms.Button();
+            this.txtboxstation = new System.Windows.Forms.TextBox();
             this.gmapKarte = new GMap.NET.WindowsForms.GMapControl();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
             this.grpboxKarte.SuspendLayout();
             this.SuspendLayout();
@@ -111,8 +111,11 @@ namespace MyTransportApp
             // 
             // grpboxKarte
             // 
-            this.grpboxKarte.Controls.Add(this.button2);
-            this.grpboxKarte.Controls.Add(this.textBox1);
+            this.grpboxKarte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpboxKarte.Controls.Add(this.btnSucheStaton);
+            this.grpboxKarte.Controls.Add(this.txtboxstation);
             this.grpboxKarte.Controls.Add(this.gmapKarte);
             this.grpboxKarte.Location = new System.Drawing.Point(49, 112);
             this.grpboxKarte.Name = "grpboxKarte";
@@ -121,8 +124,28 @@ namespace MyTransportApp
             this.grpboxKarte.TabStop = false;
             this.grpboxKarte.Text = "Karte";
             // 
+            // btnSucheStaton
+            // 
+            this.btnSucheStaton.Location = new System.Drawing.Point(129, 17);
+            this.btnSucheStaton.Name = "btnSucheStaton";
+            this.btnSucheStaton.Size = new System.Drawing.Size(170, 45);
+            this.btnSucheStaton.TabIndex = 2;
+            this.btnSucheStaton.Text = "Suche Station";
+            this.btnSucheStaton.UseVisualStyleBackColor = true;
+            this.btnSucheStaton.Click += new System.EventHandler(this.btnSucheStaton_Click);
+            // 
+            // txtboxstation
+            // 
+            this.txtboxstation.Location = new System.Drawing.Point(7, 26);
+            this.txtboxstation.Name = "txtboxstation";
+            this.txtboxstation.Size = new System.Drawing.Size(116, 26);
+            this.txtboxstation.TabIndex = 1;
+            // 
             // gmapKarte
             // 
+            this.gmapKarte.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gmapKarte.Bearing = 0F;
             this.gmapKarte.CanDragMap = true;
             this.gmapKarte.EmptyTileColor = System.Drawing.Color.Navy;
@@ -146,23 +169,6 @@ namespace MyTransportApp
             this.gmapKarte.Size = new System.Drawing.Size(660, 244);
             this.gmapKarte.TabIndex = 0;
             this.gmapKarte.Zoom = 0D;
-            this.gmapKarte.Load += new System.EventHandler(this.gMapControl1_Load);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(116, 26);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(130, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 24);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Karte
             // 
@@ -191,7 +197,7 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxKarte;
         private GMap.NET.WindowsForms.GMapControl gmapKarte;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSucheStaton;
+        private System.Windows.Forms.TextBox txtboxstation;
     }
 }

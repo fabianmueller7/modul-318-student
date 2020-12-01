@@ -13,14 +13,13 @@ using GMap.NET.WindowsForms;
 using GMap.NET.WindowsForms.Markers;
 using SwissTransport;
 
+
 namespace MyTransportApp
 {
     public partial class Karte : Form
     {
         private double vonX;
         private double vonY;
-        private double nachX;
-        private double nachY;
 
         public Karte()
         {
@@ -64,37 +63,34 @@ namespace MyTransportApp
         {
 
         }
-
-        public void NeueKarte(string vonstation, string nachstation) 
-        {
-            Stationssuche obj = new Stationssuche();
-            Coordinate vonkordinaten = obj.GetKordinaten(vonstation);
-            Coordinate nachkordinaten = obj.GetKordinaten(nachstation);
-            this.Setvonkodinaten(vonkordinaten);
-            this.Setnachkodinaten(nachkordinaten);
-        }
-
-        private void gMapControl1_Load(object sender, EventArgs e)
-        {
-            gmapKarte.DragButton = MouseButtons.Left;
-            gmapKarte.CanDragMap = true;
-            gmapKarte.MapProvider = GMapProviders.GoogleMap;
-            gmapKarte.Position = new PointLatLng(vonX, vonY);
-            gmapKarte.MinZoom = 0;
-            gmapKarte.MaxZoom = 24;
-            gmapKarte.Zoom = 9;
-            gmapKarte.AutoScroll = true;
-        }
         
         public void Setvonkodinaten(Coordinate value)
         {
             vonX = value.XCoordinate;
             vonY = value.YCoordinate;
         }
-        public void Setnachkodinaten(Coordinate value)
+
+
+        private void btnSucheStaton_Click(object sender, EventArgs e)
         {
-            nachX = value.XCoordinate;
-            nachY = value.YCoordinate;
+            Stationssuche neuesuche = new Stationssuche();
+
+            Setvonkodinaten(neuesuche.GetKordinaten(txtboxstation.Text));
+            gmapKarte.DragButton = MouseButtons.Left;
+            gmapKarte.CanDragMap = true;
+            gmapKarte.MapProvider = GMapProviders.GoogleMap;
+            gmapKarte.Position = new PointLatLng(vonX, vonY);
+            gmapKarte.MinZoom = 5;
+            gmapKarte.MaxZoom = 25;
+            gmapKarte.Zoom = 10;
+            gmapKarte.AutoScroll = true;
+
+            GMapOverlay markerOverlay = new GMapOverlay("makers");
+
+            GMarkerGoogle marker = new GMarkerGoogle(new GMap.NET.PointLatLng(vonY, vonX), GMarkerGoogleType.green_pushpin);
+            markerOverlay.Markers.Add(marker);
+            gmapKarte.Overlays.Add(markerOverlay);
+            gmapKarte.Refresh();
         }
     }
 }

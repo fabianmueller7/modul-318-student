@@ -50,6 +50,8 @@ namespace MyTransportApp
             // 
             // grpboxmenue
             // 
+            this.grpboxmenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.btnNaechStestation);
             this.grpboxmenue.Controls.Add(this.btnKarte);
@@ -116,6 +118,9 @@ namespace MyTransportApp
             // 
             // grpboxabfahrtstafel
             // 
+            this.grpboxabfahrtstafel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxabfahrtstafel.Controls.Add(this.dtagridAbfahrtstagel);
             this.grpboxabfahrtstafel.Controls.Add(this.btnsuchen);
             this.grpboxabfahrtstafel.Controls.Add(this.txtboxstation);
@@ -129,6 +134,9 @@ namespace MyTransportApp
             // 
             // dtagridAbfahrtstagel
             // 
+            this.dtagridAbfahrtstagel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtagridAbfahrtstagel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtagridAbfahrtstagel.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnnach,

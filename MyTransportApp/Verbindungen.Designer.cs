@@ -50,7 +50,6 @@ namespace MyTransportApp
             this.btnsuchen = new System.Windows.Forms.Button();
             this.lblnach = new System.Windows.Forms.Label();
             this.lblvon = new System.Windows.Forms.Label();
-            this.btnAufKarteAnzeigen = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -110,6 +109,8 @@ namespace MyTransportApp
             // 
             // grpboxmenue
             // 
+            this.grpboxmenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxmenue.Controls.Add(this.btnVerbindungen);
             this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.btnNaechsteStation);
@@ -124,7 +125,9 @@ namespace MyTransportApp
             // 
             // grpboxVerbindungen
             // 
-            this.grpboxVerbindungen.Controls.Add(this.btnAufKarteAnzeigen);
+            this.grpboxVerbindungen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxVerbindungen.Controls.Add(this.lblabfahrt);
             this.grpboxVerbindungen.Controls.Add(this.comboboxNach);
             this.grpboxVerbindungen.Controls.Add(this.comboboxvon);
@@ -185,6 +188,9 @@ namespace MyTransportApp
             // 
             // dtagridverbindungen
             // 
+            this.dtagridverbindungen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtagridverbindungen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtagridverbindungen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnvon,
@@ -268,16 +274,6 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
-            // btnAufKarteAnzeigen
-            // 
-            this.btnAufKarteAnzeigen.Location = new System.Drawing.Point(506, 33);
-            this.btnAufKarteAnzeigen.Name = "btnAufKarteAnzeigen";
-            this.btnAufKarteAnzeigen.Size = new System.Drawing.Size(174, 41);
-            this.btnAufKarteAnzeigen.TabIndex = 12;
-            this.btnAufKarteAnzeigen.Text = "Auf Karte anzeigen";
-            this.btnAufKarteAnzeigen.UseVisualStyleBackColor = true;
-            this.btnAufKarteAnzeigen.Click += new System.EventHandler(this.btnAufKarteAnzeigen_Click);
-            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -319,7 +315,6 @@ namespace MyTransportApp
         private System.Windows.Forms.ComboBox comboboxvon;
         private System.Windows.Forms.ComboBox comboboxNach;
         private System.Windows.Forms.Label lblabfahrt;
-        private System.Windows.Forms.Button btnAufKarteAnzeigen;
     }
 }
 

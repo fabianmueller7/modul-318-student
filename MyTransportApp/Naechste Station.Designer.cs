@@ -36,7 +36,10 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxNaechsteStation = new System.Windows.Forms.GroupBox();
+            this.btnsucheposition = new System.Windows.Forms.Button();
+            this.lblNaechsteStaton = new System.Windows.Forms.Label();
             this.grpboxmenue.SuspendLayout();
+            this.grpboxNaechsteStation.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpboxmenue
@@ -106,12 +109,33 @@ namespace MyTransportApp
             // 
             // grpboxNaechsteStation
             // 
+            this.grpboxNaechsteStation.Controls.Add(this.lblNaechsteStaton);
+            this.grpboxNaechsteStation.Controls.Add(this.btnsucheposition);
             this.grpboxNaechsteStation.Location = new System.Drawing.Point(49, 125);
             this.grpboxNaechsteStation.Name = "grpboxNaechsteStation";
             this.grpboxNaechsteStation.Size = new System.Drawing.Size(682, 313);
             this.grpboxNaechsteStation.TabIndex = 1;
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
+            // 
+            // btnsucheposition
+            // 
+            this.btnsucheposition.Location = new System.Drawing.Point(139, 31);
+            this.btnsucheposition.Name = "btnsucheposition";
+            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
+            this.btnsucheposition.TabIndex = 0;
+            this.btnsucheposition.Text = "Suchen";
+            this.btnsucheposition.UseVisualStyleBackColor = true;
+            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
+            // 
+            // lblNaechsteStaton
+            // 
+            this.lblNaechsteStaton.AutoSize = true;
+            this.lblNaechsteStaton.Location = new System.Drawing.Point(6, 35);
+            this.lblNaechsteStaton.Name = "lblNaechsteStaton";
+            this.lblNaechsteStaton.Size = new System.Drawing.Size(127, 20);
+            this.lblNaechsteStaton.TabIndex = 1;
+            this.lblNaechsteStaton.Text = "Nächste Station:";
             // 
             // Naechste_Station
             // 
@@ -124,6 +148,8 @@ namespace MyTransportApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Naechste_Station";
             this.grpboxmenue.ResumeLayout(false);
+            this.grpboxNaechsteStation.ResumeLayout(false);
+            this.grpboxNaechsteStation.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +163,7 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnAbfahrtstafel;
         private System.Windows.Forms.Button btnVerbindungen;
         private System.Windows.Forms.GroupBox grpboxNaechsteStation;
+        private System.Windows.Forms.Label lblNaechsteStaton;
+        private System.Windows.Forms.Button btnsucheposition;
     }
 }
