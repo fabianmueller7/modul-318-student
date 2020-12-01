@@ -47,6 +47,8 @@ namespace MyTransportApp
             this.lblnach = new System.Windows.Forms.Label();
             this.txtboxvon = new System.Windows.Forms.TextBox();
             this.lblvon = new System.Windows.Forms.Label();
+            this.datetimepickerDatum = new System.Windows.Forms.DateTimePicker();
+            this.datimZeit = new System.Windows.Forms.DateTimePicker();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -120,6 +122,8 @@ namespace MyTransportApp
             // 
             // grpboxVerbindungen
             // 
+            this.grpboxVerbindungen.Controls.Add(this.datimZeit);
+            this.grpboxVerbindungen.Controls.Add(this.datetimepickerDatum);
             this.grpboxVerbindungen.Controls.Add(this.dtagridverbindungen);
             this.grpboxVerbindungen.Controls.Add(this.btnsuchen);
             this.grpboxVerbindungen.Controls.Add(this.txtboxnach);
@@ -233,6 +237,21 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
+            // datetimepickerDatum
+            // 
+            this.datetimepickerDatum.Location = new System.Drawing.Point(70, 72);
+            this.datetimepickerDatum.Name = "datetimepickerDatum";
+            this.datetimepickerDatum.Size = new System.Drawing.Size(200, 26);
+            this.datetimepickerDatum.TabIndex = 7;
+            // 
+            // datimZeit
+            // 
+            this.datimZeit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.datimZeit.Location = new System.Drawing.Point(291, 72);
+            this.datimZeit.Name = "datimZeit";
+            this.datimZeit.Size = new System.Drawing.Size(200, 26);
+            this.datimZeit.TabIndex = 8;
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -271,6 +290,8 @@ namespace MyTransportApp
         private System.Windows.Forms.DataGridViewTextBoxColumn columnabfahrt;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnankunft;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columngleis;
+        private System.Windows.Forms.DateTimePicker datetimepickerDatum;
+        private System.Windows.Forms.DateTimePicker datimZeit;
     }
 }
 

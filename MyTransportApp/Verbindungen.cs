@@ -63,15 +63,18 @@ namespace MyTransportApp
             Stationssuche neuesuche = new Stationssuche();
             string vonStation = txtboxvon.Text;
             string nachStation = txtboxnach.Text;
+            DateTime zeitdatum = datetimepickerDatum.Value;
+            DateTime uhrzeit = datimZeit.Value;
 
-            Connections verbindungenrückgabe = neuesuche.Stationverbindungssuche(vonStation, nachStation);
+            Connections verbindungenrückgabe = neuesuche.Stationverbindungssuche(vonStation, nachStation, zeitdatum, uhrzeit);
             try
             {
                 List<Connection> verbindungrückgabliste = verbindungenrückgabe.ConnectionList;
 
                 foreach (Connection einzelneverbindung in verbindungrückgabliste.Take(4))
                 {
-                    dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, einzelneverbindung.From.DepartureTimestamp, einzelneverbindung.To.ArrivalTimestamp, einzelneverbindung.To.Platform);
+                    
+                    dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, einzelneverbindung.From.Departure, einzelneverbindung.To.Arrival, einzelneverbindung.To.Platform);
                 }
             }
             catch

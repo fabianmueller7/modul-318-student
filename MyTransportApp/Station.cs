@@ -16,9 +16,13 @@ namespace MyTransportApp
         private StationBoardRoot ausgehendeverbindungen;
         
 
-        public Connections Stationverbindungssuche(string vonStation, string nachstation)
+        public Connections Stationverbindungssuche(string vonStation, string nachstation, DateTime datum, DateTime Zeit)
         {
-            Connections vernbindungenrückgabe = transport.GetConnections(vonStation, nachstation);
+            string datumstring = datum.Date.ToString("yyyy-MM-dd");
+            
+
+            string zeitstring = Zeit.ToString("HH:mm");
+            Connections vernbindungenrückgabe = transport.GetConnections(vonStation, nachstation, datumstring , zeitstring);
             return vernbindungenrückgabe;
         }
 
