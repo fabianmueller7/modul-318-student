@@ -61,8 +61,8 @@ namespace MyTransportApp
             dtagridverbindungen.Rows.Clear();
 
             Stationssuche neuesuche = new Stationssuche();
-            string vonStation = txtboxvon.Text;
-            string nachStation = txtboxnach.Text;
+            string vonStation = comboboxvon.Text;
+            string nachStation = comboboxNach.Text;
             DateTime zeitdatum = datetimepickerDatum.Value;
             DateTime uhrzeit = datimZeit.Value;
 
@@ -84,14 +84,37 @@ namespace MyTransportApp
             }
         }
 
-        private void von_textgeaender(object sender, EventArgs e)
-        {
-
-        }
-
         private void datagridVerbindungssuchedoppelklick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void Vorschlage(object sender, EventArgs e)
+        {
+            comboboxvon.Items.Clear();
+
+            Stationssuche neuesuche = new Stationssuche();
+
+            List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxvon.Text);
+
+            foreach (Station station in sucheresultat)
+            {
+                comboboxvon.Items.Add(station.Name);
+            }
+        }
+
+        private void VoerschlaegeNach(object sender, EventArgs e)
+        {
+            comboboxNach.Items.Clear();
+
+            Stationssuche neuesuche = new Stationssuche();
+
+            List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxNach.Text);
+
+            foreach (Station station in sucheresultat)
+            {
+                comboboxNach.Items.Add(station.Name);
+            }
         }
     }
 }

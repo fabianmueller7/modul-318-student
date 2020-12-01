@@ -36,6 +36,8 @@ namespace MyTransportApp
             this.btnNaechsteStation = new System.Windows.Forms.Button();
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
             this.grpboxVerbindungen = new System.Windows.Forms.GroupBox();
+            this.datimZeit = new System.Windows.Forms.DateTimePicker();
+            this.datetimepickerDatum = new System.Windows.Forms.DateTimePicker();
             this.dtagridverbindungen = new System.Windows.Forms.DataGridView();
             this.columnvon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnnach = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,12 +45,10 @@ namespace MyTransportApp
             this.columnankunft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columngleis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnsuchen = new System.Windows.Forms.Button();
-            this.txtboxnach = new System.Windows.Forms.TextBox();
             this.lblnach = new System.Windows.Forms.Label();
-            this.txtboxvon = new System.Windows.Forms.TextBox();
             this.lblvon = new System.Windows.Forms.Label();
-            this.datetimepickerDatum = new System.Windows.Forms.DateTimePicker();
-            this.datimZeit = new System.Windows.Forms.DateTimePicker();
+            this.comboboxvon = new System.Windows.Forms.ComboBox();
+            this.comboboxNach = new System.Windows.Forms.ComboBox();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -122,13 +122,13 @@ namespace MyTransportApp
             // 
             // grpboxVerbindungen
             // 
+            this.grpboxVerbindungen.Controls.Add(this.comboboxNach);
+            this.grpboxVerbindungen.Controls.Add(this.comboboxvon);
             this.grpboxVerbindungen.Controls.Add(this.datimZeit);
             this.grpboxVerbindungen.Controls.Add(this.datetimepickerDatum);
             this.grpboxVerbindungen.Controls.Add(this.dtagridverbindungen);
             this.grpboxVerbindungen.Controls.Add(this.btnsuchen);
-            this.grpboxVerbindungen.Controls.Add(this.txtboxnach);
             this.grpboxVerbindungen.Controls.Add(this.lblnach);
-            this.grpboxVerbindungen.Controls.Add(this.txtboxvon);
             this.grpboxVerbindungen.Controls.Add(this.lblvon);
             this.grpboxVerbindungen.Location = new System.Drawing.Point(47, 108);
             this.grpboxVerbindungen.Name = "grpboxVerbindungen";
@@ -136,6 +136,21 @@ namespace MyTransportApp
             this.grpboxVerbindungen.TabIndex = 6;
             this.grpboxVerbindungen.TabStop = false;
             this.grpboxVerbindungen.Text = "Verbindungssuche";
+            // 
+            // datimZeit
+            // 
+            this.datimZeit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.datimZeit.Location = new System.Drawing.Point(291, 72);
+            this.datimZeit.Name = "datimZeit";
+            this.datimZeit.Size = new System.Drawing.Size(200, 26);
+            this.datimZeit.TabIndex = 8;
+            // 
+            // datetimepickerDatum
+            // 
+            this.datetimepickerDatum.Location = new System.Drawing.Point(70, 72);
+            this.datetimepickerDatum.Name = "datetimepickerDatum";
+            this.datetimepickerDatum.Size = new System.Drawing.Size(200, 26);
+            this.datetimepickerDatum.TabIndex = 7;
             // 
             // dtagridverbindungen
             // 
@@ -204,29 +219,14 @@ namespace MyTransportApp
             this.btnsuchen.UseVisualStyleBackColor = true;
             this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
             // 
-            // txtboxnach
-            // 
-            this.txtboxnach.Location = new System.Drawing.Point(571, 34);
-            this.txtboxnach.Name = "txtboxnach";
-            this.txtboxnach.Size = new System.Drawing.Size(100, 26);
-            this.txtboxnach.TabIndex = 3;
-            // 
             // lblnach
             // 
             this.lblnach.AutoSize = true;
-            this.lblnach.Location = new System.Drawing.Point(518, 35);
+            this.lblnach.Location = new System.Drawing.Point(213, 40);
             this.lblnach.Name = "lblnach";
             this.lblnach.Size = new System.Drawing.Size(46, 20);
             this.lblnach.TabIndex = 2;
             this.lblnach.Text = "Nach";
-            // 
-            // txtboxvon
-            // 
-            this.txtboxvon.Location = new System.Drawing.Point(70, 40);
-            this.txtboxvon.Name = "txtboxvon";
-            this.txtboxvon.Size = new System.Drawing.Size(100, 26);
-            this.txtboxvon.TabIndex = 1;
-            this.txtboxvon.TextChanged += new System.EventHandler(this.von_textgeaender);
             // 
             // lblvon
             // 
@@ -237,20 +237,23 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
-            // datetimepickerDatum
+            // comboboxvon
             // 
-            this.datetimepickerDatum.Location = new System.Drawing.Point(70, 72);
-            this.datetimepickerDatum.Name = "datetimepickerDatum";
-            this.datetimepickerDatum.Size = new System.Drawing.Size(200, 26);
-            this.datetimepickerDatum.TabIndex = 7;
+            this.comboboxvon.FormattingEnabled = true;
+            this.comboboxvon.Location = new System.Drawing.Point(69, 38);
+            this.comboboxvon.Name = "comboboxvon";
+            this.comboboxvon.Size = new System.Drawing.Size(121, 28);
+            this.comboboxvon.TabIndex = 9;
+            this.comboboxvon.TextUpdate += new System.EventHandler(this.Vorschlage);
             // 
-            // datimZeit
+            // comboboxNach
             // 
-            this.datimZeit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.datimZeit.Location = new System.Drawing.Point(291, 72);
-            this.datimZeit.Name = "datimZeit";
-            this.datimZeit.Size = new System.Drawing.Size(200, 26);
-            this.datimZeit.TabIndex = 8;
+            this.comboboxNach.FormattingEnabled = true;
+            this.comboboxNach.Location = new System.Drawing.Point(265, 37);
+            this.comboboxNach.Name = "comboboxNach";
+            this.comboboxNach.Size = new System.Drawing.Size(121, 28);
+            this.comboboxNach.TabIndex = 10;
+            this.comboboxNach.TextUpdate += new System.EventHandler(this.VoerschlaegeNach);
             // 
             // Verbindungen
             // 
@@ -279,9 +282,7 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnNaechsteStation;
         private System.Windows.Forms.GroupBox grpboxmenue;
         private System.Windows.Forms.GroupBox grpboxVerbindungen;
-        private System.Windows.Forms.TextBox txtboxnach;
         private System.Windows.Forms.Label lblnach;
-        private System.Windows.Forms.TextBox txtboxvon;
         private System.Windows.Forms.Label lblvon;
         private System.Windows.Forms.Button btnsuchen;
         private System.Windows.Forms.DataGridView dtagridverbindungen;
@@ -292,6 +293,8 @@ namespace MyTransportApp
         private System.Windows.Forms.DataGridViewTextBoxColumn Columngleis;
         private System.Windows.Forms.DateTimePicker datetimepickerDatum;
         private System.Windows.Forms.DateTimePicker datimZeit;
+        private System.Windows.Forms.ComboBox comboboxvon;
+        private System.Windows.Forms.ComboBox comboboxNach;
     }
 }
 

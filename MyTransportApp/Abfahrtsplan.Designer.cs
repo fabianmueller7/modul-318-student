@@ -166,7 +166,7 @@ namespace MyTransportApp
             // 
             // btnsuchen
             // 
-            this.btnsuchen.Location = new System.Drawing.Point(238, 35);
+            this.btnsuchen.Location = new System.Drawing.Point(539, 35);
             this.btnsuchen.Name = "btnsuchen";
             this.btnsuchen.Size = new System.Drawing.Size(102, 30);
             this.btnsuchen.TabIndex = 3;
@@ -176,10 +176,11 @@ namespace MyTransportApp
             // 
             // txtboxstation
             // 
-            this.txtboxstation.Location = new System.Drawing.Point(76, 35);
+            this.txtboxstation.Location = new System.Drawing.Point(85, 34);
             this.txtboxstation.Name = "txtboxstation";
             this.txtboxstation.Size = new System.Drawing.Size(100, 26);
             this.txtboxstation.TabIndex = 1;
+            this.txtboxstation.TextChanged += new System.EventHandler(this.txtboxstation_TextChanged);
             // 
             // lblstation
             // 

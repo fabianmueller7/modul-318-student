@@ -34,12 +34,12 @@ namespace MyTransportApp
 
                 List<Station> stationen = stationsobjekte.StationList;
 
-                foreach (Station Bahnhof in stationen)
+                foreach (Station bahnhof in stationen)
                 {
-                    if (Bahnhof.Name.Equals(eingabestationsname))
+                    if (bahnhof.Name.Equals(eingabestationsname))
                     {
-                        neuesuche.stationname = Bahnhof.Name;
-                        neuesuche.stationid = Bahnhof.Id;
+                        neuesuche.stationname = bahnhof.Name;
+                        neuesuche.stationid = bahnhof.Id;
                     }
                 }
 
@@ -50,6 +50,15 @@ namespace MyTransportApp
                 return neuesuche;
             }
             catch { return neuesuche; }
+        }
+
+        public List<Station> Vorschlaege(string texteingabe)
+        {
+            var stationsobjekte = transport.GetStations(query: texteingabe);
+
+            List<Station> stationenvorschlaege = stationsobjekte.StationList;
+
+            return stationenvorschlaege;
         }
 
         public StationBoardRoot getausgehendeverbindungen() { return ausgehendeverbindungen; }

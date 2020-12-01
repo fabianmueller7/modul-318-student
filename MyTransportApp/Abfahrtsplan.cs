@@ -79,5 +79,10 @@ namespace MyTransportApp
                 return; 
             }
         }
+
+        private void txtboxstation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
