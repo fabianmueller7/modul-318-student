@@ -30,7 +30,6 @@ namespace MyTransportApp
         private void InitializeComponent()
         {
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
-            this.btnGespeichert = new System.Windows.Forms.Button();
             this.btnNaechStestation = new System.Windows.Forms.Button();
             this.btnKarte = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@ namespace MyTransportApp
             // 
             this.grpboxmenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.btnNaechStestation);
             this.grpboxmenue.Controls.Add(this.btnKarte);
             this.grpboxmenue.Controls.Add(this.btnAbfahrtstafel);
@@ -63,16 +61,6 @@ namespace MyTransportApp
             this.grpboxmenue.TabIndex = 0;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
-            // 
-            // btnGespeichert
-            // 
-            this.btnGespeichert.Location = new System.Drawing.Point(550, 25);
-            this.btnGespeichert.Name = "btnGespeichert";
-            this.btnGespeichert.Size = new System.Drawing.Size(135, 42);
-            this.btnGespeichert.TabIndex = 4;
-            this.btnGespeichert.Text = "Gespeichert";
-            this.btnGespeichert.UseVisualStyleBackColor = true;
-            this.btnGespeichert.Click += new System.EventHandler(this.btnGespeichert_Click);
             // 
             // btnNaechStestation
             // 
@@ -223,7 +211,6 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnAbfahrtstafel;
         private System.Windows.Forms.Button btnKarte;
         private System.Windows.Forms.Button btnNaechStestation;
-        private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxabfahrtstafel;
         private System.Windows.Forms.TextBox txtboxstation;
         private System.Windows.Forms.Label lblstation;

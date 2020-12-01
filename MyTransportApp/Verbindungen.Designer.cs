@@ -32,10 +32,10 @@ namespace MyTransportApp
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnKarte = new System.Windows.Forms.Button();
-            this.btnGespeichert = new System.Windows.Forms.Button();
             this.btnNaechsteStation = new System.Windows.Forms.Button();
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
             this.grpboxVerbindungen = new System.Windows.Forms.GroupBox();
+            this.btnsend = new System.Windows.Forms.Button();
             this.lblabfahrt = new System.Windows.Forms.Label();
             this.comboboxNach = new System.Windows.Forms.ComboBox();
             this.comboboxvon = new System.Windows.Forms.ComboBox();
@@ -50,7 +50,6 @@ namespace MyTransportApp
             this.btnsuchen = new System.Windows.Forms.Button();
             this.lblnach = new System.Windows.Forms.Label();
             this.lblvon = new System.Windows.Forms.Label();
-            this.btnsend = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -88,16 +87,6 @@ namespace MyTransportApp
             this.btnKarte.UseVisualStyleBackColor = true;
             this.btnKarte.Click += new System.EventHandler(this.btnKarte_Click);
             // 
-            // btnGespeichert
-            // 
-            this.btnGespeichert.Location = new System.Drawing.Point(556, 25);
-            this.btnGespeichert.Name = "btnGespeichert";
-            this.btnGespeichert.Size = new System.Drawing.Size(129, 42);
-            this.btnGespeichert.TabIndex = 3;
-            this.btnGespeichert.Text = "Gespeichert";
-            this.btnGespeichert.UseVisualStyleBackColor = true;
-            this.btnGespeichert.Click += new System.EventHandler(this.btnGespeichert_Click);
-            // 
             // btnNaechsteStation
             // 
             this.btnNaechsteStation.Location = new System.Drawing.Point(411, 25);
@@ -113,7 +102,6 @@ namespace MyTransportApp
             this.grpboxmenue.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxmenue.Controls.Add(this.btnVerbindungen);
-            this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.btnNaechsteStation);
             this.grpboxmenue.Controls.Add(this.btnAbfahrtstafel);
             this.grpboxmenue.Controls.Add(this.btnKarte);
@@ -145,6 +133,17 @@ namespace MyTransportApp
             this.grpboxVerbindungen.TabIndex = 6;
             this.grpboxVerbindungen.TabStop = false;
             this.grpboxVerbindungen.Text = "Verbindungssuche";
+            // 
+            // btnsend
+            // 
+            this.btnsend.Enabled = false;
+            this.btnsend.Location = new System.Drawing.Point(551, 34);
+            this.btnsend.Name = "btnsend";
+            this.btnsend.Size = new System.Drawing.Size(120, 32);
+            this.btnsend.TabIndex = 12;
+            this.btnsend.Text = "Senden";
+            this.btnsend.UseVisualStyleBackColor = true;
+            this.btnsend.Click += new System.EventHandler(this.btnsend_Click);
             // 
             // lblabfahrt
             // 
@@ -207,6 +206,7 @@ namespace MyTransportApp
             this.dtagridverbindungen.Size = new System.Drawing.Size(674, 193);
             this.dtagridverbindungen.TabIndex = 6;
             this.dtagridverbindungen.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVerbindungssuchedoppelklick);
+            this.dtagridverbindungen.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.speichern);
             // 
             // columnvon
             // 
@@ -276,17 +276,6 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
-            // btnsend
-            // 
-            this.btnsend.Enabled = false;
-            this.btnsend.Location = new System.Drawing.Point(551, 34);
-            this.btnsend.Name = "btnsend";
-            this.btnsend.Size = new System.Drawing.Size(120, 32);
-            this.btnsend.TabIndex = 12;
-            this.btnsend.Text = "Senden";
-            this.btnsend.UseVisualStyleBackColor = true;
-            this.btnsend.Click += new System.EventHandler(this.btnsend_Click);
-            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -310,7 +299,6 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnVerbindungen;
         private System.Windows.Forms.Button btnAbfahrtstafel;
         private System.Windows.Forms.Button btnKarte;
-        private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.Button btnNaechsteStation;
         private System.Windows.Forms.GroupBox grpboxmenue;
         private System.Windows.Forms.GroupBox grpboxVerbindungen;

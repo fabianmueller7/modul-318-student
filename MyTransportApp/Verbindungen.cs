@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace MyTransportApp
         public Verbindungen()
         {
             InitializeComponent();
-                       
+            
         }
 
         private void btnAbfahrtstafel_Click(object sender, EventArgs e)
@@ -40,14 +41,6 @@ namespace MyTransportApp
             this.Hide();
             Naechste_Station formNaechsteStation = new Naechste_Station();
             formNaechsteStation.ShowDialog();
-            this.Close();
-        }
-
-        private void btnGespeichert_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Gespeichert formGespeichert = new Gespeichert();
-            formGespeichert.ShowDialog();
             this.Close();
         }
 
@@ -146,6 +139,25 @@ namespace MyTransportApp
             catch
             {
                 MessageBox.Show("Wählen sie eine Reihe aus.");
+            }
+        }
+
+        private void speichern(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string speicherreihe = dtagridverbindungen.SelectedRows.ToString();           
+
+            PrintDocument p = new PrintDocument();
+            p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)
+            {
+                e1.Graphics.DrawString(speicherreihe, new Font("Times New Roman", 12), new SolidBrush(Color.Black), new RectangleF(0, 0, p.DefaultPageSettings.PrintableArea.Width, p.DefaultPageSettings.PrintableArea.Height));
+            };
+            try
+            {
+                p.Print();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Exception Occured While Printing", ex);
             }
         }
     }

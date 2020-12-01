@@ -42,14 +42,6 @@ namespace MyTransportApp
             this.Close();
         }
 
-        private void btnGespeichert_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Gespeichert formGespeichert = new Gespeichert();
-            formGespeichert.ShowDialog();
-            this.Close();
-        }
-
         private void NaechsteStation_Click(object sender, EventArgs e)
         {
             this.Hide();

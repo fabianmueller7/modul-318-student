@@ -30,7 +30,6 @@ namespace MyTransportApp
         private void InitializeComponent()
         {
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
-            this.btnGespeichert = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnKarte = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
@@ -45,7 +44,6 @@ namespace MyTransportApp
             // 
             // grpboxmenue
             // 
-            this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.button1);
             this.grpboxmenue.Controls.Add(this.btnKarte);
             this.grpboxmenue.Controls.Add(this.btnAbfahrtstafel);
@@ -56,16 +54,6 @@ namespace MyTransportApp
             this.grpboxmenue.TabIndex = 0;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
-            // 
-            // btnGespeichert
-            // 
-            this.btnGespeichert.Location = new System.Drawing.Point(562, 25);
-            this.btnGespeichert.Name = "btnGespeichert";
-            this.btnGespeichert.Size = new System.Drawing.Size(123, 38);
-            this.btnGespeichert.TabIndex = 3;
-            this.btnGespeichert.Text = "Gespeichert";
-            this.btnGespeichert.UseVisualStyleBackColor = true;
-            this.btnGespeichert.Click += new System.EventHandler(this.btnGespeichert_Click);
             // 
             // button1
             // 
@@ -194,7 +182,6 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnAbfahrtstafel;
         private System.Windows.Forms.Button btnKarte;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxKarte;
         private GMap.NET.WindowsForms.GMapControl gmapKarte;
         private System.Windows.Forms.Button btnSucheStaton;

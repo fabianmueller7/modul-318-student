@@ -72,14 +72,6 @@ namespace MyTransportApp
             this.Close();
         }
 
-        private void btnGespeichert_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Gespeichert formGespeichert = new Gespeichert();
-            formGespeichert.ShowDialog();
-            this.Close();
-        }
-
         private void btnsucheposition_Click(object sender, EventArgs e)
         {
             GeraetX = 47.094971;

@@ -30,22 +30,20 @@ namespace MyTransportApp
         private void InitializeComponent()
         {
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
-            this.btnGespeichert = new System.Windows.Forms.Button();
             this.btnNaechsteStation = new System.Windows.Forms.Button();
             this.btnKarte = new System.Windows.Forms.Button();
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxNaechsteStation = new System.Windows.Forms.GroupBox();
+            this.gmapNaechsteStaion = new GMap.NET.WindowsForms.GMapControl();
             this.lblNaechsteStaton = new System.Windows.Forms.Label();
             this.btnsucheposition = new System.Windows.Forms.Button();
-            this.gmapNaechsteStaion = new GMap.NET.WindowsForms.GMapControl();
             this.grpboxmenue.SuspendLayout();
             this.grpboxNaechsteStation.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpboxmenue
             // 
-            this.grpboxmenue.Controls.Add(this.btnGespeichert);
             this.grpboxmenue.Controls.Add(this.btnNaechsteStation);
             this.grpboxmenue.Controls.Add(this.btnKarte);
             this.grpboxmenue.Controls.Add(this.btnAbfahrtstafel);
@@ -56,16 +54,6 @@ namespace MyTransportApp
             this.grpboxmenue.TabIndex = 0;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
-            // 
-            // btnGespeichert
-            // 
-            this.btnGespeichert.Location = new System.Drawing.Point(557, 29);
-            this.btnGespeichert.Name = "btnGespeichert";
-            this.btnGespeichert.Size = new System.Drawing.Size(132, 36);
-            this.btnGespeichert.TabIndex = 4;
-            this.btnGespeichert.Text = "Gespeichert";
-            this.btnGespeichert.UseVisualStyleBackColor = true;
-            this.btnGespeichert.Click += new System.EventHandler(this.btnGespeichert_Click);
             // 
             // btnNaechsteStation
             // 
@@ -123,25 +111,6 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
             // 
-            // lblNaechsteStaton
-            // 
-            this.lblNaechsteStaton.AutoSize = true;
-            this.lblNaechsteStaton.Location = new System.Drawing.Point(6, 35);
-            this.lblNaechsteStaton.Name = "lblNaechsteStaton";
-            this.lblNaechsteStaton.Size = new System.Drawing.Size(127, 20);
-            this.lblNaechsteStaton.TabIndex = 1;
-            this.lblNaechsteStaton.Text = "Nächste Station:";
-            // 
-            // btnsucheposition
-            // 
-            this.btnsucheposition.Location = new System.Drawing.Point(139, 35);
-            this.btnsucheposition.Name = "btnsucheposition";
-            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
-            this.btnsucheposition.TabIndex = 0;
-            this.btnsucheposition.Text = "Suchen";
-            this.btnsucheposition.UseVisualStyleBackColor = true;
-            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
-            // 
             // gmapNaechsteStaion
             // 
             this.gmapNaechsteStaion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -171,6 +140,25 @@ namespace MyTransportApp
             this.gmapNaechsteStaion.TabIndex = 2;
             this.gmapNaechsteStaion.Zoom = 0D;
             // 
+            // lblNaechsteStaton
+            // 
+            this.lblNaechsteStaton.AutoSize = true;
+            this.lblNaechsteStaton.Location = new System.Drawing.Point(6, 35);
+            this.lblNaechsteStaton.Name = "lblNaechsteStaton";
+            this.lblNaechsteStaton.Size = new System.Drawing.Size(127, 20);
+            this.lblNaechsteStaton.TabIndex = 1;
+            this.lblNaechsteStaton.Text = "Nächste Station:";
+            // 
+            // btnsucheposition
+            // 
+            this.btnsucheposition.Location = new System.Drawing.Point(139, 35);
+            this.btnsucheposition.Name = "btnsucheposition";
+            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
+            this.btnsucheposition.TabIndex = 0;
+            this.btnsucheposition.Text = "Suchen";
+            this.btnsucheposition.UseVisualStyleBackColor = true;
+            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
+            // 
             // Naechste_Station
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -191,7 +179,6 @@ namespace MyTransportApp
         #endregion
 
         private System.Windows.Forms.GroupBox grpboxmenue;
-        private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.Button btnNaechsteStation;
         private System.Windows.Forms.Button btnKarte;
         private System.Windows.Forms.Button btnAbfahrtstafel;
