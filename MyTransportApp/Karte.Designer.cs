@@ -36,7 +36,11 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxKarte = new System.Windows.Forms.GroupBox();
+            this.gmapKarte = new GMap.NET.WindowsForms.GMapControl();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
+            this.grpboxKarte.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpboxmenue
@@ -83,6 +87,7 @@ namespace MyTransportApp
             this.btnKarte.TabIndex = 2;
             this.btnKarte.Text = "Karte";
             this.btnKarte.UseVisualStyleBackColor = false;
+            this.btnKarte.Click += new System.EventHandler(this.btnKarte_Click);
             // 
             // btnAbfahrtstafel
             // 
@@ -106,12 +111,58 @@ namespace MyTransportApp
             // 
             // grpboxKarte
             // 
-            this.grpboxKarte.Location = new System.Drawing.Point(49, 142);
+            this.grpboxKarte.Controls.Add(this.button2);
+            this.grpboxKarte.Controls.Add(this.textBox1);
+            this.grpboxKarte.Controls.Add(this.gmapKarte);
+            this.grpboxKarte.Location = new System.Drawing.Point(49, 112);
             this.grpboxKarte.Name = "grpboxKarte";
-            this.grpboxKarte.Size = new System.Drawing.Size(677, 296);
+            this.grpboxKarte.Size = new System.Drawing.Size(677, 326);
             this.grpboxKarte.TabIndex = 1;
             this.grpboxKarte.TabStop = false;
             this.grpboxKarte.Text = "Karte";
+            // 
+            // gmapKarte
+            // 
+            this.gmapKarte.Bearing = 0F;
+            this.gmapKarte.CanDragMap = true;
+            this.gmapKarte.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmapKarte.GrayScaleMode = false;
+            this.gmapKarte.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmapKarte.LevelsKeepInMemmory = 5;
+            this.gmapKarte.Location = new System.Drawing.Point(6, 76);
+            this.gmapKarte.MarkersEnabled = true;
+            this.gmapKarte.MaxZoom = 2;
+            this.gmapKarte.MinZoom = 2;
+            this.gmapKarte.MouseWheelZoomEnabled = true;
+            this.gmapKarte.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmapKarte.Name = "gmapKarte";
+            this.gmapKarte.NegativeMode = false;
+            this.gmapKarte.PolygonsEnabled = true;
+            this.gmapKarte.RetryLoadTile = 0;
+            this.gmapKarte.RoutesEnabled = true;
+            this.gmapKarte.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmapKarte.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmapKarte.ShowTileGridLines = false;
+            this.gmapKarte.Size = new System.Drawing.Size(660, 244);
+            this.gmapKarte.TabIndex = 0;
+            this.gmapKarte.Zoom = 0D;
+            this.gmapKarte.Load += new System.EventHandler(this.gMapControl1_Load);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(116, 26);
+            this.textBox1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(130, 28);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(91, 24);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // Karte
             // 
@@ -124,6 +175,8 @@ namespace MyTransportApp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Karte";
             this.grpboxmenue.ResumeLayout(false);
+            this.grpboxKarte.ResumeLayout(false);
+            this.grpboxKarte.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -137,5 +190,8 @@ namespace MyTransportApp
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGespeichert;
         private System.Windows.Forms.GroupBox grpboxKarte;
+        private GMap.NET.WindowsForms.GMapControl gmapKarte;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -74,7 +74,7 @@ namespace MyTransportApp
                 foreach (Connection einzelneverbindung in verbindungrückgabliste.Take(4))
                 {
                     
-                    dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, einzelneverbindung.From.Departure, einzelneverbindung.To.Arrival, einzelneverbindung.To.Platform);
+                    dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, Convert.ToDateTime(einzelneverbindung.From.Departure).ToString("MM-dd HH:mm"), Convert.ToDateTime(einzelneverbindung.To.Arrival).ToString("MM-dd HH:mm"), einzelneverbindung.To.Platform);
                 }
             }
             catch
@@ -96,11 +96,16 @@ namespace MyTransportApp
             Stationssuche neuesuche = new Stationssuche();
 
             List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxvon.Text);
-
-            foreach (Station station in sucheresultat)
+            try
             {
-                comboboxvon.Items.Add(station.Name);
+                foreach (Station station in sucheresultat)
+                {
+                    comboboxvon.Items.Add(station.Name);
+                }
             }
+            catch { }
+            comboboxvon.Focus();
+            comboboxvon.SelectionStart = comboboxvon.Text.Length;
         }
 
         private void VoerschlaegeNach(object sender, EventArgs e)
@@ -110,11 +115,25 @@ namespace MyTransportApp
             Stationssuche neuesuche = new Stationssuche();
 
             List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxNach.Text);
-
-            foreach (Station station in sucheresultat)
+            try
             {
-                comboboxNach.Items.Add(station.Name);
+                foreach (Station station in sucheresultat)
+                {
+                    comboboxNach.Items.Add(station.Name);
+                }
             }
+            catch { }
+            comboboxNach.Focus();
+            comboboxNach.SelectionStart = comboboxNach.Text.Length;
+        }
+
+        private void btnAufKarteAnzeigen_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Karte formKarte = new Karte();
+            formKarte.NeueKarte(comboboxvon.Text, comboboxNach.Text);
+            formKarte.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -15,11 +15,11 @@ namespace MyTransportApp
         private string stationid;
         private StationBoardRoot ausgehendeverbindungen;
         
+        
 
         public Connections Stationverbindungssuche(string vonStation, string nachstation, DateTime datum, DateTime Zeit)
         {
-            string datumstring = datum.Date.ToString("yyyy-MM-dd");
-            
+            string datumstring = datum.Date.ToString("yyyy-MM-dd");           
 
             string zeitstring = Zeit.ToString("HH:mm");
             Connections vernbindungenrückgabe = transport.GetConnections(vonStation, nachstation, datumstring , zeitstring);
@@ -59,6 +59,22 @@ namespace MyTransportApp
             List<Station> stationenvorschlaege = stationsobjekte.StationList;
 
             return stationenvorschlaege;
+        }
+
+        public Coordinate GetKordinaten(string station) 
+        {            
+                var stationsobjekte = transport.GetStations(query: station);
+            try
+            {
+                List<Station> stationen = stationsobjekte.StationList;
+
+                foreach (Station bahnhof in stationen.Take(1))
+                {
+                    return bahnhof.Coordinate;
+                }
+            }
+            catch { return null; }
+            return null;
         }
 
         public StationBoardRoot getausgehendeverbindungen() { return ausgehendeverbindungen; }

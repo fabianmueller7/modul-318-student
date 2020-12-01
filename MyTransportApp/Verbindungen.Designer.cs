@@ -36,6 +36,9 @@ namespace MyTransportApp
             this.btnNaechsteStation = new System.Windows.Forms.Button();
             this.grpboxmenue = new System.Windows.Forms.GroupBox();
             this.grpboxVerbindungen = new System.Windows.Forms.GroupBox();
+            this.lblabfahrt = new System.Windows.Forms.Label();
+            this.comboboxNach = new System.Windows.Forms.ComboBox();
+            this.comboboxvon = new System.Windows.Forms.ComboBox();
             this.datimZeit = new System.Windows.Forms.DateTimePicker();
             this.datetimepickerDatum = new System.Windows.Forms.DateTimePicker();
             this.dtagridverbindungen = new System.Windows.Forms.DataGridView();
@@ -47,8 +50,7 @@ namespace MyTransportApp
             this.btnsuchen = new System.Windows.Forms.Button();
             this.lblnach = new System.Windows.Forms.Label();
             this.lblvon = new System.Windows.Forms.Label();
-            this.comboboxvon = new System.Windows.Forms.ComboBox();
-            this.comboboxNach = new System.Windows.Forms.ComboBox();
+            this.btnAufKarteAnzeigen = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -122,6 +124,8 @@ namespace MyTransportApp
             // 
             // grpboxVerbindungen
             // 
+            this.grpboxVerbindungen.Controls.Add(this.btnAufKarteAnzeigen);
+            this.grpboxVerbindungen.Controls.Add(this.lblabfahrt);
             this.grpboxVerbindungen.Controls.Add(this.comboboxNach);
             this.grpboxVerbindungen.Controls.Add(this.comboboxvon);
             this.grpboxVerbindungen.Controls.Add(this.datimZeit);
@@ -137,10 +141,37 @@ namespace MyTransportApp
             this.grpboxVerbindungen.TabStop = false;
             this.grpboxVerbindungen.Text = "Verbindungssuche";
             // 
+            // lblabfahrt
+            // 
+            this.lblabfahrt.AutoSize = true;
+            this.lblabfahrt.Location = new System.Drawing.Point(7, 77);
+            this.lblabfahrt.Name = "lblabfahrt";
+            this.lblabfahrt.Size = new System.Drawing.Size(62, 20);
+            this.lblabfahrt.TabIndex = 11;
+            this.lblabfahrt.Text = "Abfahrt";
+            // 
+            // comboboxNach
+            // 
+            this.comboboxNach.FormattingEnabled = true;
+            this.comboboxNach.Location = new System.Drawing.Point(276, 40);
+            this.comboboxNach.Name = "comboboxNach";
+            this.comboboxNach.Size = new System.Drawing.Size(121, 28);
+            this.comboboxNach.TabIndex = 10;
+            this.comboboxNach.TextUpdate += new System.EventHandler(this.VoerschlaegeNach);
+            // 
+            // comboboxvon
+            // 
+            this.comboboxvon.FormattingEnabled = true;
+            this.comboboxvon.Location = new System.Drawing.Point(69, 38);
+            this.comboboxvon.Name = "comboboxvon";
+            this.comboboxvon.Size = new System.Drawing.Size(121, 28);
+            this.comboboxvon.TabIndex = 9;
+            this.comboboxvon.TextUpdate += new System.EventHandler(this.Vorschlage);
+            // 
             // datimZeit
             // 
             this.datimZeit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.datimZeit.Location = new System.Drawing.Point(291, 72);
+            this.datimZeit.Location = new System.Drawing.Point(276, 72);
             this.datimZeit.Name = "datimZeit";
             this.datimZeit.Size = new System.Drawing.Size(200, 26);
             this.datimZeit.TabIndex = 8;
@@ -222,7 +253,7 @@ namespace MyTransportApp
             // lblnach
             // 
             this.lblnach.AutoSize = true;
-            this.lblnach.Location = new System.Drawing.Point(213, 40);
+            this.lblnach.Location = new System.Drawing.Point(224, 41);
             this.lblnach.Name = "lblnach";
             this.lblnach.Size = new System.Drawing.Size(46, 20);
             this.lblnach.TabIndex = 2;
@@ -237,23 +268,15 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
-            // comboboxvon
+            // btnAufKarteAnzeigen
             // 
-            this.comboboxvon.FormattingEnabled = true;
-            this.comboboxvon.Location = new System.Drawing.Point(69, 38);
-            this.comboboxvon.Name = "comboboxvon";
-            this.comboboxvon.Size = new System.Drawing.Size(121, 28);
-            this.comboboxvon.TabIndex = 9;
-            this.comboboxvon.TextUpdate += new System.EventHandler(this.Vorschlage);
-            // 
-            // comboboxNach
-            // 
-            this.comboboxNach.FormattingEnabled = true;
-            this.comboboxNach.Location = new System.Drawing.Point(265, 37);
-            this.comboboxNach.Name = "comboboxNach";
-            this.comboboxNach.Size = new System.Drawing.Size(121, 28);
-            this.comboboxNach.TabIndex = 10;
-            this.comboboxNach.TextUpdate += new System.EventHandler(this.VoerschlaegeNach);
+            this.btnAufKarteAnzeigen.Location = new System.Drawing.Point(506, 33);
+            this.btnAufKarteAnzeigen.Name = "btnAufKarteAnzeigen";
+            this.btnAufKarteAnzeigen.Size = new System.Drawing.Size(174, 41);
+            this.btnAufKarteAnzeigen.TabIndex = 12;
+            this.btnAufKarteAnzeigen.Text = "Auf Karte anzeigen";
+            this.btnAufKarteAnzeigen.UseVisualStyleBackColor = true;
+            this.btnAufKarteAnzeigen.Click += new System.EventHandler(this.btnAufKarteAnzeigen_Click);
             // 
             // Verbindungen
             // 
@@ -295,6 +318,8 @@ namespace MyTransportApp
         private System.Windows.Forms.DateTimePicker datimZeit;
         private System.Windows.Forms.ComboBox comboboxvon;
         private System.Windows.Forms.ComboBox comboboxNach;
+        private System.Windows.Forms.Label lblabfahrt;
+        private System.Windows.Forms.Button btnAufKarteAnzeigen;
     }
 }
 

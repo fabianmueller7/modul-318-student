@@ -180,7 +180,6 @@ namespace MyTransportApp
             this.txtboxstation.Name = "txtboxstation";
             this.txtboxstation.Size = new System.Drawing.Size(100, 26);
             this.txtboxstation.TabIndex = 1;
-            this.txtboxstation.TextChanged += new System.EventHandler(this.txtboxstation_TextChanged);
             // 
             // lblstation
             // 
