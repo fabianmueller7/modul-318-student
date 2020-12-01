@@ -76,12 +76,14 @@ namespace MyTransportApp
                     
                     dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, Convert.ToDateTime(einzelneverbindung.From.Departure).ToString("MM-dd HH:mm"), Convert.ToDateTime(einzelneverbindung.To.Arrival).ToString("MM-dd HH:mm"), einzelneverbindung.To.Platform);
                 }
+                btnsend.Enabled = true;
             }
             catch
             {
                 MessageBox.Show("Keine Verbindung gefunden");
                 return;
             }
+            
         }
 
         private void datagridVerbindungssuchedoppelklick(object sender, DataGridViewCellEventArgs e)
@@ -125,6 +127,26 @@ namespace MyTransportApp
             catch { }
             comboboxNach.Focus();
             comboboxNach.SelectionStart = comboboxNach.Text.Length;            
+        }
+
+        private void btnsend_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var dataGridViewlist = new List<string>();
+                foreach (DataGridViewRow row in dtagridverbindungen.SelectedRows)
+                {
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        dataGridViewlist.Add(cell.Value.ToString());
+                    }
+                }
+                if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Verbindung" + "&body=Von: " + dataGridViewlist[0] + " am "+ dataGridViewlist[2] + " Nach: " + dataGridViewlist[1] +" bis " + dataGridViewlist[3] + ", Gleis: " + dataGridViewlist[4]);
+            }
+            catch
+            {
+                MessageBox.Show("Wählen sie eine Reihe aus.");
+            }
         }
     }
 }

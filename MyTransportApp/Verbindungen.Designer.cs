@@ -50,6 +50,7 @@ namespace MyTransportApp
             this.btnsuchen = new System.Windows.Forms.Button();
             this.lblnach = new System.Windows.Forms.Label();
             this.lblvon = new System.Windows.Forms.Label();
+            this.btnsend = new System.Windows.Forms.Button();
             this.grpboxmenue.SuspendLayout();
             this.grpboxVerbindungen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtagridverbindungen)).BeginInit();
@@ -128,6 +129,7 @@ namespace MyTransportApp
             this.grpboxVerbindungen.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpboxVerbindungen.Controls.Add(this.btnsend);
             this.grpboxVerbindungen.Controls.Add(this.lblabfahrt);
             this.grpboxVerbindungen.Controls.Add(this.comboboxNach);
             this.grpboxVerbindungen.Controls.Add(this.comboboxvon);
@@ -274,6 +276,17 @@ namespace MyTransportApp
             this.lblvon.TabIndex = 0;
             this.lblvon.Text = "Von";
             // 
+            // btnsend
+            // 
+            this.btnsend.Enabled = false;
+            this.btnsend.Location = new System.Drawing.Point(551, 34);
+            this.btnsend.Name = "btnsend";
+            this.btnsend.Size = new System.Drawing.Size(120, 32);
+            this.btnsend.TabIndex = 12;
+            this.btnsend.Text = "Senden";
+            this.btnsend.UseVisualStyleBackColor = true;
+            this.btnsend.Click += new System.EventHandler(this.btnsend_Click);
+            // 
             // Verbindungen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -315,6 +328,7 @@ namespace MyTransportApp
         private System.Windows.Forms.ComboBox comboboxvon;
         private System.Windows.Forms.ComboBox comboboxNach;
         private System.Windows.Forms.Label lblabfahrt;
+        private System.Windows.Forms.Button btnsend;
     }
 }
 
