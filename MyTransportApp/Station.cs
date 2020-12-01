@@ -15,8 +15,6 @@ namespace MyTransportApp
         private string stationid;
         private StationBoardRoot ausgehendeverbindungen;
         
-        
-
         public Connections Stationverbindungssuche(string vonStation, string nachstation, DateTime datum, DateTime Zeit)
         {
             string datumstring = datum.Date.ToString("yyyy-MM-dd");           
@@ -76,7 +74,12 @@ namespace MyTransportApp
             catch { return null; }
             return null;
         }
+         public Stations Neachstestatonfinden(string X, string Y) 
+        {
+            Stations bahnhoefe = transport.GetNeareststation(X, Y);
 
+            return bahnhoefe;
+        }
         public StationBoardRoot getausgehendeverbindungen() { return ausgehendeverbindungen; }
     }
 }

@@ -36,8 +36,9 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxNaechsteStation = new System.Windows.Forms.GroupBox();
-            this.btnsucheposition = new System.Windows.Forms.Button();
             this.lblNaechsteStaton = new System.Windows.Forms.Label();
+            this.btnsucheposition = new System.Windows.Forms.Button();
+            this.gmapNaechsteStaion = new GMap.NET.WindowsForms.GMapControl();
             this.grpboxmenue.SuspendLayout();
             this.grpboxNaechsteStation.SuspendLayout();
             this.SuspendLayout();
@@ -109,6 +110,10 @@ namespace MyTransportApp
             // 
             // grpboxNaechsteStation
             // 
+            this.grpboxNaechsteStation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpboxNaechsteStation.Controls.Add(this.gmapNaechsteStaion);
             this.grpboxNaechsteStation.Controls.Add(this.lblNaechsteStaton);
             this.grpboxNaechsteStation.Controls.Add(this.btnsucheposition);
             this.grpboxNaechsteStation.Location = new System.Drawing.Point(49, 125);
@@ -118,16 +123,6 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
             // 
-            // btnsucheposition
-            // 
-            this.btnsucheposition.Location = new System.Drawing.Point(139, 31);
-            this.btnsucheposition.Name = "btnsucheposition";
-            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
-            this.btnsucheposition.TabIndex = 0;
-            this.btnsucheposition.Text = "Suchen";
-            this.btnsucheposition.UseVisualStyleBackColor = true;
-            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
-            // 
             // lblNaechsteStaton
             // 
             this.lblNaechsteStaton.AutoSize = true;
@@ -136,6 +131,45 @@ namespace MyTransportApp
             this.lblNaechsteStaton.Size = new System.Drawing.Size(127, 20);
             this.lblNaechsteStaton.TabIndex = 1;
             this.lblNaechsteStaton.Text = "Nächste Station:";
+            // 
+            // btnsucheposition
+            // 
+            this.btnsucheposition.Location = new System.Drawing.Point(139, 35);
+            this.btnsucheposition.Name = "btnsucheposition";
+            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
+            this.btnsucheposition.TabIndex = 0;
+            this.btnsucheposition.Text = "Suchen";
+            this.btnsucheposition.UseVisualStyleBackColor = true;
+            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
+            // 
+            // gmapNaechsteStaion
+            // 
+            this.gmapNaechsteStaion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gmapNaechsteStaion.Bearing = 0F;
+            this.gmapNaechsteStaion.CanDragMap = true;
+            this.gmapNaechsteStaion.EmptyTileColor = System.Drawing.Color.Navy;
+            this.gmapNaechsteStaion.GrayScaleMode = false;
+            this.gmapNaechsteStaion.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.gmapNaechsteStaion.LevelsKeepInMemmory = 5;
+            this.gmapNaechsteStaion.Location = new System.Drawing.Point(6, 70);
+            this.gmapNaechsteStaion.MarkersEnabled = true;
+            this.gmapNaechsteStaion.MaxZoom = 2;
+            this.gmapNaechsteStaion.MinZoom = 2;
+            this.gmapNaechsteStaion.MouseWheelZoomEnabled = true;
+            this.gmapNaechsteStaion.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.gmapNaechsteStaion.Name = "gmapNaechsteStaion";
+            this.gmapNaechsteStaion.NegativeMode = false;
+            this.gmapNaechsteStaion.PolygonsEnabled = true;
+            this.gmapNaechsteStaion.RetryLoadTile = 0;
+            this.gmapNaechsteStaion.RoutesEnabled = true;
+            this.gmapNaechsteStaion.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.gmapNaechsteStaion.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.gmapNaechsteStaion.ShowTileGridLines = false;
+            this.gmapNaechsteStaion.Size = new System.Drawing.Size(666, 237);
+            this.gmapNaechsteStaion.TabIndex = 2;
+            this.gmapNaechsteStaion.Zoom = 0D;
             // 
             // Naechste_Station
             // 
@@ -165,5 +199,6 @@ namespace MyTransportApp
         private System.Windows.Forms.GroupBox grpboxNaechsteStation;
         private System.Windows.Forms.Label lblNaechsteStaton;
         private System.Windows.Forms.Button btnsucheposition;
+        private GMap.NET.WindowsForms.GMapControl gmapNaechsteStaion;
     }
 }

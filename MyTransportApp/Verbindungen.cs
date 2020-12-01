@@ -124,7 +124,7 @@ namespace MyTransportApp
             }
             catch { }
             comboboxNach.Focus();
-            comboboxNach.SelectionStart = comboboxNach.Text.Length;
+            comboboxNach.SelectionStart = comboboxNach.Text.Length;            
         }
     }
 }
