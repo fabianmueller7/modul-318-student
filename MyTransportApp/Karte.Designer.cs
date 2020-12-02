@@ -75,7 +75,6 @@ namespace MyTransportApp
             this.btnKarte.TabIndex = 2;
             this.btnKarte.Text = "Karte";
             this.btnKarte.UseVisualStyleBackColor = false;
-            this.btnKarte.Click += new System.EventHandler(this.btnKarte_Click);
             // 
             // btnAbfahrtstafel
             // 

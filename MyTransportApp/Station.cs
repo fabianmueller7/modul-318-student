@@ -52,11 +52,15 @@ namespace MyTransportApp
 
         public List<Station> Vorschlaege(string texteingabe)
         {
-            var stationsobjekte = transport.GetStations(query: texteingabe);
+            try
+            {
+                var stationsobjekte = transport.GetStations(query: texteingabe);
 
-            List<Station> stationenvorschlaege = stationsobjekte.StationList;
+                List<Station> stationenvorschlaege = stationsobjekte.StationList;
 
-            return stationenvorschlaege;
+                return stationenvorschlaege;
+            }
+            catch { return null; }
         }
 
         public Coordinate GetKordinaten(string station) 

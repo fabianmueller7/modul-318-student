@@ -50,39 +50,44 @@ namespace MyTransportApp
             this.Close();
 
         }
-
-        private void btnKarte_Click(object sender, EventArgs e)
-        {
-
-        }
         
         public void Setvonkodinaten(Coordinate value)
         {
-            vonX = value.XCoordinate;
-            vonY = value.YCoordinate;
+            try
+            {
+                vonX = value.XCoordinate;
+                vonY = value.YCoordinate;
+            }
+            catch 
+            {
+                MessageBox.Show("Keine Station gefunden!");
+                return; 
+            }
         }
-
-
         private void btnSucheStaton_Click(object sender, EventArgs e)
         {
-            Stationssuche neuesuche = new Stationssuche();
+            try{
+                Stationssuche neuesuche = new Stationssuche();
 
-            Setvonkodinaten(neuesuche.GetKordinaten(txtboxstation.Text));
-            gmapKarte.DragButton = MouseButtons.Left;
-            gmapKarte.CanDragMap = true;
-            gmapKarte.MapProvider = GMapProviders.GoogleMap;
-            gmapKarte.Position = new PointLatLng(vonX, vonY);
-            gmapKarte.MinZoom = 5;
-            gmapKarte.MaxZoom = 25;
-            gmapKarte.Zoom = 10;
-            gmapKarte.AutoScroll = true;
+                Setvonkodinaten(neuesuche.GetKordinaten(txtboxstation.Text));
+                gmapKarte.DragButton = MouseButtons.Left;
+                gmapKarte.CanDragMap = true;
+                gmapKarte.MapProvider = GMapProviders.GoogleMap;
+                gmapKarte.Position = new PointLatLng(vonX, vonY);
+                gmapKarte.MinZoom = 5;
+                gmapKarte.MaxZoom = 25;
+                gmapKarte.Zoom = 10;
+                gmapKarte.AutoScroll = true;
 
-            GMapOverlay markerOverlay = new GMapOverlay("makers");
+                GMapOverlay markerOverlay = new GMapOverlay("makers");
 
-            GMarkerGoogle marker = new GMarkerGoogle(new GMap.NET.PointLatLng(vonY, vonX), GMarkerGoogleType.green_pushpin);
-            markerOverlay.Markers.Add(marker);
-            gmapKarte.Overlays.Add(markerOverlay);
-            gmapKarte.Refresh();
+                GMarkerGoogle marker = new GMarkerGoogle(new GMap.NET.PointLatLng(vonY, vonX), GMarkerGoogleType.green_pushpin);
+                markerOverlay.Markers.Add(marker);
+                gmapKarte.Overlays.Add(markerOverlay);
+                gmapKarte.Refresh();
+            }
+            catch { MessageBox.Show("Keine Station gefunden!"); }
+
         }
     }
 }

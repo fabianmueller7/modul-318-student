@@ -16,8 +16,7 @@ namespace MyTransportApp
     {
         public Verbindungen()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
 
         private void btnAbfahrtstafel_Click(object sender, EventArgs e)
@@ -44,11 +43,6 @@ namespace MyTransportApp
             this.Close();
         }
 
-        private void btnVerbindungen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnsuchen_Click(object sender, EventArgs e)
         {
             dtagridverbindungen.Rows.Clear();
@@ -65,8 +59,7 @@ namespace MyTransportApp
                 List<Connection> verbindungrückgabliste = verbindungenrückgabe.ConnectionList;
 
                 foreach (Connection einzelneverbindung in verbindungrückgabliste.Take(4))
-                {
-                    
+                {                    
                     dtagridverbindungen.Rows.Add(einzelneverbindung.From.Station.Name, einzelneverbindung.To.Station.Name, Convert.ToDateTime(einzelneverbindung.From.Departure).ToString("MM-dd HH:mm"), Convert.ToDateTime(einzelneverbindung.To.Arrival).ToString("MM-dd HH:mm"), einzelneverbindung.To.Platform);
                 }
                 btnsend.Enabled = true;
@@ -86,40 +79,48 @@ namespace MyTransportApp
 
         private void Vorschlage(object sender, EventArgs e)
         {
-            comboboxvon.Items.Clear();
-
-            Stationssuche neuesuche = new Stationssuche();
-
-            List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxvon.Text);
             try
             {
-                foreach (Station station in sucheresultat)
+                comboboxvon.Items.Clear();
+
+                Stationssuche neuesuche = new Stationssuche();
+
+                List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxvon.Text);
+                try
                 {
-                    comboboxvon.Items.Add(station.Name);
+                    foreach (Station station in sucheresultat)
+                    {
+                        comboboxvon.Items.Add(station.Name);
+                    }
                 }
+                catch { }
+                comboboxvon.Focus();
+                comboboxvon.SelectionStart = comboboxvon.Text.Length;
             }
-            catch { }
-            comboboxvon.Focus();
-            comboboxvon.SelectionStart = comboboxvon.Text.Length;
+            catch { return; }
         }
 
         private void VoerschlaegeNach(object sender, EventArgs e)
         {
-            comboboxNach.Items.Clear();
-
-            Stationssuche neuesuche = new Stationssuche();
-
-            List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxNach.Text);
             try
             {
-                foreach (Station station in sucheresultat)
+                comboboxNach.Items.Clear();
+
+                Stationssuche neuesuche = new Stationssuche();
+
+                List<Station> sucheresultat = neuesuche.Vorschlaege(comboboxNach.Text);
+                try
                 {
-                    comboboxNach.Items.Add(station.Name);
+                    foreach (Station station in sucheresultat)
+                    {
+                        comboboxNach.Items.Add(station.Name);
+                    }
                 }
+                catch { }
+                comboboxNach.Focus();
+                comboboxNach.SelectionStart = comboboxNach.Text.Length;
             }
-            catch { }
-            comboboxNach.Focus();
-            comboboxNach.SelectionStart = comboboxNach.Text.Length;            
+            catch { return; }
         }
 
         private void btnsend_Click(object sender, EventArgs e)
@@ -131,7 +132,11 @@ namespace MyTransportApp
                 {
                     foreach (DataGridViewCell cell in row.Cells)
                     {
-                        dataGridViewlist.Add(cell.Value.ToString());
+                        try
+                        {
+                            dataGridViewlist.Add(cell.Value.ToString());
+                        }
+                        catch { MessageBox.Show("Keine Daten ausgewählt"); return; }
                     }
                 }
                 if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Verbindung" + "&body=Von: " + dataGridViewlist[0] + " am "+ dataGridViewlist[2] + " Nach: " + dataGridViewlist[1] +" bis " + dataGridViewlist[3] + ", Gleis: " + dataGridViewlist[4]);

@@ -42,11 +42,6 @@ namespace MyTransportApp
             this.Close();
         }
 
-        private void btnAbfahrtstafel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnsuchen_Click(object sender, EventArgs e)
         {
             dtagridAbfahrtstagel.Rows.Clear();

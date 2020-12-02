@@ -23,15 +23,13 @@ namespace MyTransportApp
         GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
 
         void GetLocationProperty()
-        {
-         
+        {         
             watcher.TryStart(false, TimeSpan.FromMilliseconds(10000));
 
             GeoCoordinate coord = watcher.Position.Location;
 
             if (coord.IsUnknown != true)
             {
-
                    GeraetX = coord.Latitude;
                    GeraetY = coord.Longitude;
             }
@@ -78,29 +76,19 @@ namespace MyTransportApp
             GeraetY = 8.346450;
             if (GeraetX != 0 && GeraetY != 0)
             {
-                Stationssuche stationssuche = new Stationssuche();
-                Stations naechstebahnhofe = stationssuche.Neachstestatonfinden(Convert.ToString(GeraetX), Convert.ToString(GeraetY));
-                List<Station> nachstebahnhofliste = naechstebahnhofe.StationList;
+                try
+                {
+                    Stationssuche stationssuche = new Stationssuche();
+                    Stations naechstebahnhofe = stationssuche.Neachstestatonfinden(Convert.ToString(GeraetX), Convert.ToString(GeraetY));
+                    List<Station> nachstebahnhofliste = naechstebahnhofe.StationList;
 
-                gmapNaechsteStaion.DragButton = MouseButtons.Left;
-                gmapNaechsteStaion.CanDragMap = true;
-                gmapNaechsteStaion.MapProvider = GMapProviders.GoogleMap;
-                gmapNaechsteStaion.Position = new PointLatLng(GeraetX, GeraetY);
-                gmapNaechsteStaion.MinZoom = 5;
-                gmapNaechsteStaion.MaxZoom = 25;
-                gmapNaechsteStaion.Zoom = 15;
-                gmapNaechsteStaion.AutoScroll = true;
-                
-
-                GMapOverlay markerOverlay = new GMapOverlay("makers");
-
-                foreach (Station bahnhof in nachstebahnhofliste.Take(5))
-                {              
-                    markerOverlay.Markers.Add(new GMarkerGoogle(new GMap.NET.PointLatLng(bahnhof.Coordinate.YCoordinate, bahnhof.Coordinate.XCoordinate), GMarkerGoogleType.green_pushpin));
-                    
+                    foreach (Station bahnhof in nachstebahnhofliste.Take(5))
+                    {
+                        dgvNaechsteStation.Rows.Add(bahnhof.Name, bahnhof.Distance);
+                    }
+                    this.Refresh();
                 }
-                gmapNaechsteStaion.Overlays.Add(markerOverlay);
-                this.Refresh();
+                catch { MessageBox.Show("Keine Station gefunden!"); return; }
             }
             else
             {

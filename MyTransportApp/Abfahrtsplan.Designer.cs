@@ -92,7 +92,6 @@ namespace MyTransportApp
             this.btnAbfahrtstafel.TabIndex = 1;
             this.btnAbfahrtstafel.Text = "Abfahrtstafel";
             this.btnAbfahrtstafel.UseVisualStyleBackColor = false;
-            this.btnAbfahrtstafel.Click += new System.EventHandler(this.btnAbfahrtstafel_Click);
             // 
             // btnVerbindungen
             // 

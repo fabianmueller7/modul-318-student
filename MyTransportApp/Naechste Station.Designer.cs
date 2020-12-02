@@ -35,11 +35,14 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxNaechsteStation = new System.Windows.Forms.GroupBox();
-            this.gmapNaechsteStaion = new GMap.NET.WindowsForms.GMapControl();
             this.lblNaechsteStaton = new System.Windows.Forms.Label();
             this.btnsucheposition = new System.Windows.Forms.Button();
+            this.dgvNaechsteStation = new System.Windows.Forms.DataGridView();
+            this.columnstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columndistanz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpboxmenue.SuspendLayout();
             this.grpboxNaechsteStation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNaechsteStation)).BeginInit();
             this.SuspendLayout();
             // 
             // grpboxmenue
@@ -101,7 +104,7 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grpboxNaechsteStation.Controls.Add(this.gmapNaechsteStaion);
+            this.grpboxNaechsteStation.Controls.Add(this.dgvNaechsteStation);
             this.grpboxNaechsteStation.Controls.Add(this.lblNaechsteStaton);
             this.grpboxNaechsteStation.Controls.Add(this.btnsucheposition);
             this.grpboxNaechsteStation.Location = new System.Drawing.Point(49, 125);
@@ -110,35 +113,6 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.TabIndex = 1;
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
-            // 
-            // gmapNaechsteStaion
-            // 
-            this.gmapNaechsteStaion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gmapNaechsteStaion.Bearing = 0F;
-            this.gmapNaechsteStaion.CanDragMap = true;
-            this.gmapNaechsteStaion.EmptyTileColor = System.Drawing.Color.Navy;
-            this.gmapNaechsteStaion.GrayScaleMode = false;
-            this.gmapNaechsteStaion.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
-            this.gmapNaechsteStaion.LevelsKeepInMemmory = 5;
-            this.gmapNaechsteStaion.Location = new System.Drawing.Point(6, 70);
-            this.gmapNaechsteStaion.MarkersEnabled = true;
-            this.gmapNaechsteStaion.MaxZoom = 2;
-            this.gmapNaechsteStaion.MinZoom = 2;
-            this.gmapNaechsteStaion.MouseWheelZoomEnabled = true;
-            this.gmapNaechsteStaion.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
-            this.gmapNaechsteStaion.Name = "gmapNaechsteStaion";
-            this.gmapNaechsteStaion.NegativeMode = false;
-            this.gmapNaechsteStaion.PolygonsEnabled = true;
-            this.gmapNaechsteStaion.RetryLoadTile = 0;
-            this.gmapNaechsteStaion.RoutesEnabled = true;
-            this.gmapNaechsteStaion.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
-            this.gmapNaechsteStaion.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
-            this.gmapNaechsteStaion.ShowTileGridLines = false;
-            this.gmapNaechsteStaion.Size = new System.Drawing.Size(666, 237);
-            this.gmapNaechsteStaion.TabIndex = 2;
-            this.gmapNaechsteStaion.Zoom = 0D;
             // 
             // lblNaechsteStaton
             // 
@@ -151,13 +125,42 @@ namespace MyTransportApp
             // 
             // btnsucheposition
             // 
-            this.btnsucheposition.Location = new System.Drawing.Point(139, 35);
+            this.btnsucheposition.Location = new System.Drawing.Point(139, 25);
             this.btnsucheposition.Name = "btnsucheposition";
-            this.btnsucheposition.Size = new System.Drawing.Size(87, 29);
+            this.btnsucheposition.Size = new System.Drawing.Size(96, 39);
             this.btnsucheposition.TabIndex = 0;
             this.btnsucheposition.Text = "Suchen";
             this.btnsucheposition.UseVisualStyleBackColor = true;
             this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
+            // 
+            // dgvNaechsteStation
+            // 
+            this.dgvNaechsteStation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNaechsteStation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnstation,
+            this.columndistanz});
+            this.dgvNaechsteStation.Location = new System.Drawing.Point(10, 74);
+            this.dgvNaechsteStation.Name = "dgvNaechsteStation";
+            this.dgvNaechsteStation.RowHeadersWidth = 62;
+            this.dgvNaechsteStation.RowTemplate.Height = 28;
+            this.dgvNaechsteStation.Size = new System.Drawing.Size(666, 233);
+            this.dgvNaechsteStation.TabIndex = 2;
+            // 
+            // columnstation
+            // 
+            this.columnstation.HeaderText = "Station";
+            this.columnstation.MinimumWidth = 8;
+            this.columnstation.Name = "columnstation";
+            this.columnstation.ReadOnly = true;
+            this.columnstation.Width = 150;
+            // 
+            // columndistanz
+            // 
+            this.columndistanz.HeaderText = "Dinstanz";
+            this.columndistanz.MinimumWidth = 8;
+            this.columndistanz.Name = "columndistanz";
+            this.columndistanz.ReadOnly = true;
+            this.columndistanz.Width = 150;
             // 
             // Naechste_Station
             // 
@@ -172,6 +175,7 @@ namespace MyTransportApp
             this.grpboxmenue.ResumeLayout(false);
             this.grpboxNaechsteStation.ResumeLayout(false);
             this.grpboxNaechsteStation.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNaechsteStation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -186,6 +190,8 @@ namespace MyTransportApp
         private System.Windows.Forms.GroupBox grpboxNaechsteStation;
         private System.Windows.Forms.Label lblNaechsteStaton;
         private System.Windows.Forms.Button btnsucheposition;
-        private GMap.NET.WindowsForms.GMapControl gmapNaechsteStaion;
+        private System.Windows.Forms.DataGridView dgvNaechsteStation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnstation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columndistanz;
     }
 }
