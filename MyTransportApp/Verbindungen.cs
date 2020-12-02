@@ -125,9 +125,10 @@ namespace MyTransportApp
 
         private void btnsend_Click(object sender, EventArgs e)
         {
+            var dataGridViewlist = new List<string>();
             try
             {
-                var dataGridViewlist = new List<string>();
+                
                 foreach (DataGridViewRow row in dtagridverbindungen.SelectedRows)
                 {
                     foreach (DataGridViewCell cell in row.Cells)
