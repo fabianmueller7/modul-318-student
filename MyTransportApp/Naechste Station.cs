@@ -25,7 +25,7 @@ namespace MyTransportApp
         void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
         {
             GeoCoordinate coord = watcher.Position.Location;
-
+            
             if (coord.IsUnknown != true)
             {
                 GeraetX = coord.Latitude;
