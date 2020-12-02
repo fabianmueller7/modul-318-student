@@ -42,6 +42,7 @@ namespace MyTransportApp
                         dgvNaechsteStation.Rows.Add(bahnhof.Name, bahnhof.Distance);
                     }
                     this.Refresh();
+                    watcher.Stop();
                 }
                 catch { MessageBox.Show("Keine Station gefunden!"); return; }
             }
