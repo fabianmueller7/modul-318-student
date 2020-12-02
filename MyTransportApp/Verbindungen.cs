@@ -74,7 +74,7 @@ namespace MyTransportApp
 
         private void datagridVerbindungssuchedoppelklick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void Vorschlage(object sender, EventArgs e)
@@ -150,7 +150,8 @@ namespace MyTransportApp
 
         private void speichern(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string speicherreihe = dtagridverbindungen.SelectedRows.ToString();           
+            int index = e.RowIndex; 
+            String speicherreihe = dtagridverbindungen[0, index].Value.ToString() + " " + dtagridverbindungen[1, index].Value.ToString() + " " + dtagridverbindungen[2, index].Value.ToString() + " " + dtagridverbindungen[3, index].Value.ToString() + " " + dtagridverbindungen[4, index].Value.ToString();
 
             PrintDocument p = new PrintDocument();
             p.PrintPage += delegate (object sender1, PrintPageEventArgs e1)

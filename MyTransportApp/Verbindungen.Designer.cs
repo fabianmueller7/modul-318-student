@@ -204,7 +204,6 @@ namespace MyTransportApp
             this.dtagridverbindungen.RowTemplate.Height = 28;
             this.dtagridverbindungen.Size = new System.Drawing.Size(674, 193);
             this.dtagridverbindungen.TabIndex = 6;
-            this.dtagridverbindungen.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridVerbindungssuchedoppelklick);
             this.dtagridverbindungen.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.speichern);
             // 
             // columnvon
