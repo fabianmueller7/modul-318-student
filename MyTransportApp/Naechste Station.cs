@@ -22,28 +22,29 @@ namespace MyTransportApp
         private double GeraetY { get; set; }
         GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
 
-        void GetLocationProperty()
-        {         
-            watcher.TryStart(false, TimeSpan.FromMilliseconds(10000));
-
+        void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
+        {
             GeoCoordinate coord = watcher.Position.Location;
 
             if (coord.IsUnknown != true)
             {
-                   GeraetX = coord.Latitude;
-                   GeraetY = coord.Longitude;
+                GeraetX = coord.Latitude;
+                GeraetY = coord.Longitude;
             }
             else
             {
-              MessageBox.Show("Unbekannte Koordinaten!");
+                MessageBox.Show("Unbekannte Koordinaten!");
             }
+            System.Threading.Thread.Sleep(1000);
         }
 
         public Naechste_Station()
-        {
+        {           
             InitializeComponent();
             watcher.Start();
-            GetLocationProperty();
+            watcher.TryStart(false, TimeSpan.FromMilliseconds(100000));
+            watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(watcher_StatusChanged) ;
+
         }
 
         private void btnVerbindungen_Click(object sender, EventArgs e)
@@ -72,8 +73,8 @@ namespace MyTransportApp
 
         private void btnsucheposition_Click(object sender, EventArgs e)
         {
-            GeraetX = 47.094971;
-            GeraetY = 8.346450;
+            //GeraetX = 47.094971;
+            //GeraetY = 8.346450;
             if (GeraetX != 0 && GeraetY != 0)
             {
                 try
@@ -95,6 +96,5 @@ namespace MyTransportApp
                 MessageBox.Show("Unbekannte Koordinaten!");
             }
         }
-
     }
 }
