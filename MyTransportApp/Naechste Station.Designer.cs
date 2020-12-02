@@ -35,8 +35,6 @@ namespace MyTransportApp
             this.btnAbfahrtstafel = new System.Windows.Forms.Button();
             this.btnVerbindungen = new System.Windows.Forms.Button();
             this.grpboxNaechsteStation = new System.Windows.Forms.GroupBox();
-            this.lblNaechsteStaton = new System.Windows.Forms.Label();
-            this.btnsucheposition = new System.Windows.Forms.Button();
             this.dgvNaechsteStation = new System.Windows.Forms.DataGridView();
             this.columnstation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columndistanz = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -105,8 +103,6 @@ namespace MyTransportApp
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpboxNaechsteStation.Controls.Add(this.dgvNaechsteStation);
-            this.grpboxNaechsteStation.Controls.Add(this.lblNaechsteStaton);
-            this.grpboxNaechsteStation.Controls.Add(this.btnsucheposition);
             this.grpboxNaechsteStation.Location = new System.Drawing.Point(49, 125);
             this.grpboxNaechsteStation.Name = "grpboxNaechsteStation";
             this.grpboxNaechsteStation.Size = new System.Drawing.Size(682, 313);
@@ -114,36 +110,17 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
             // 
-            // lblNaechsteStaton
-            // 
-            this.lblNaechsteStaton.AutoSize = true;
-            this.lblNaechsteStaton.Location = new System.Drawing.Point(6, 35);
-            this.lblNaechsteStaton.Name = "lblNaechsteStaton";
-            this.lblNaechsteStaton.Size = new System.Drawing.Size(127, 20);
-            this.lblNaechsteStaton.TabIndex = 1;
-            this.lblNaechsteStaton.Text = "Nächste Station:";
-            // 
-            // btnsucheposition
-            // 
-            this.btnsucheposition.Location = new System.Drawing.Point(139, 25);
-            this.btnsucheposition.Name = "btnsucheposition";
-            this.btnsucheposition.Size = new System.Drawing.Size(96, 39);
-            this.btnsucheposition.TabIndex = 0;
-            this.btnsucheposition.Text = "Suchen";
-            this.btnsucheposition.UseVisualStyleBackColor = true;
-            this.btnsucheposition.Click += new System.EventHandler(this.btnsucheposition_Click);
-            // 
             // dgvNaechsteStation
             // 
             this.dgvNaechsteStation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNaechsteStation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columnstation,
             this.columndistanz});
-            this.dgvNaechsteStation.Location = new System.Drawing.Point(10, 74);
+            this.dgvNaechsteStation.Location = new System.Drawing.Point(10, 25);
             this.dgvNaechsteStation.Name = "dgvNaechsteStation";
             this.dgvNaechsteStation.RowHeadersWidth = 62;
             this.dgvNaechsteStation.RowTemplate.Height = 28;
-            this.dgvNaechsteStation.Size = new System.Drawing.Size(666, 233);
+            this.dgvNaechsteStation.Size = new System.Drawing.Size(666, 282);
             this.dgvNaechsteStation.TabIndex = 2;
             // 
             // columnstation
@@ -174,7 +151,6 @@ namespace MyTransportApp
             this.Text = "Naechste_Station";
             this.grpboxmenue.ResumeLayout(false);
             this.grpboxNaechsteStation.ResumeLayout(false);
-            this.grpboxNaechsteStation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNaechsteStation)).EndInit();
             this.ResumeLayout(false);
 
@@ -188,8 +164,6 @@ namespace MyTransportApp
         private System.Windows.Forms.Button btnAbfahrtstafel;
         private System.Windows.Forms.Button btnVerbindungen;
         private System.Windows.Forms.GroupBox grpboxNaechsteStation;
-        private System.Windows.Forms.Label lblNaechsteStaton;
-        private System.Windows.Forms.Button btnsucheposition;
         private System.Windows.Forms.DataGridView dgvNaechsteStation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnstation;
         private System.Windows.Forms.DataGridViewTextBoxColumn columndistanz;

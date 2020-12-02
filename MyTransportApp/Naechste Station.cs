@@ -30,12 +30,26 @@ namespace MyTransportApp
             {
                 GeraetX = coord.Latitude;
                 GeraetY = coord.Longitude;
+
+                try
+                {
+                    Stationssuche stationssuche = new Stationssuche();
+                    Stations naechstebahnhofe = stationssuche.Neachstestatonfinden(Convert.ToString(GeraetX), Convert.ToString(GeraetY));
+                    List<Station> nachstebahnhofliste = naechstebahnhofe.StationList;
+
+                    foreach (Station bahnhof in nachstebahnhofliste.Take(5))
+                    {
+                        dgvNaechsteStation.Rows.Add(bahnhof.Name, bahnhof.Distance);
+                    }
+                    this.Refresh();
+                }
+                catch { MessageBox.Show("Keine Station gefunden!"); return; }
             }
             else
             {
                 MessageBox.Show("Unbekannte Koordinaten!");
-            }
-            System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(1000);
+            }           
         }
 
         public Naechste_Station()
@@ -69,32 +83,6 @@ namespace MyTransportApp
             Karte formKarte = new Karte();
             formKarte.ShowDialog();
             this.Close();
-        }
-
-        private void btnsucheposition_Click(object sender, EventArgs e)
-        {
-            //GeraetX = 47.094971;
-            //GeraetY = 8.346450;
-            if (GeraetX != 0 && GeraetY != 0)
-            {
-                try
-                {
-                    Stationssuche stationssuche = new Stationssuche();
-                    Stations naechstebahnhofe = stationssuche.Neachstestatonfinden(Convert.ToString(GeraetX), Convert.ToString(GeraetY));
-                    List<Station> nachstebahnhofliste = naechstebahnhofe.StationList;
-
-                    foreach (Station bahnhof in nachstebahnhofliste.Take(5))
-                    {
-                        dgvNaechsteStation.Rows.Add(bahnhof.Name, bahnhof.Distance);
-                    }
-                    this.Refresh();
-                }
-                catch { MessageBox.Show("Keine Station gefunden!"); return; }
-            }
-            else
-            {
-                MessageBox.Show("Unbekannte Koordinaten!");
-            }
         }
     }
 }
