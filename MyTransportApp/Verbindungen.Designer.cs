@@ -107,7 +107,7 @@ namespace MyTransportApp
             this.grpboxmenue.Location = new System.Drawing.Point(47, 12);
             this.grpboxmenue.Name = "grpboxmenue";
             this.grpboxmenue.Size = new System.Drawing.Size(691, 76);
-            this.grpboxmenue.TabIndex = 5;
+            this.grpboxmenue.TabIndex = 20;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
             // 
@@ -129,7 +129,7 @@ namespace MyTransportApp
             this.grpboxVerbindungen.Location = new System.Drawing.Point(47, 108);
             this.grpboxVerbindungen.Name = "grpboxVerbindungen";
             this.grpboxVerbindungen.Size = new System.Drawing.Size(691, 330);
-            this.grpboxVerbindungen.TabIndex = 6;
+            this.grpboxVerbindungen.TabIndex = 18;
             this.grpboxVerbindungen.TabStop = false;
             this.grpboxVerbindungen.Text = "Verbindungssuche";
             // 
@@ -139,7 +139,7 @@ namespace MyTransportApp
             this.btnsend.Location = new System.Drawing.Point(551, 34);
             this.btnsend.Name = "btnsend";
             this.btnsend.Size = new System.Drawing.Size(120, 32);
-            this.btnsend.TabIndex = 12;
+            this.btnsend.TabIndex = 9;
             this.btnsend.Text = "Senden";
             this.btnsend.UseVisualStyleBackColor = true;
             this.btnsend.Click += new System.EventHandler(this.btnsend_Click);
@@ -150,7 +150,7 @@ namespace MyTransportApp
             this.lblabfahrt.Location = new System.Drawing.Point(7, 77);
             this.lblabfahrt.Name = "lblabfahrt";
             this.lblabfahrt.Size = new System.Drawing.Size(62, 20);
-            this.lblabfahrt.TabIndex = 11;
+            this.lblabfahrt.TabIndex = 17;
             this.lblabfahrt.Text = "Abfahrt";
             // 
             // comboboxNach
@@ -159,7 +159,7 @@ namespace MyTransportApp
             this.comboboxNach.Location = new System.Drawing.Point(276, 40);
             this.comboboxNach.Name = "comboboxNach";
             this.comboboxNach.Size = new System.Drawing.Size(121, 28);
-            this.comboboxNach.TabIndex = 10;
+            this.comboboxNach.TabIndex = 6;
             this.comboboxNach.TextUpdate += new System.EventHandler(this.VoerschlaegeNach);
             // 
             // comboboxvon
@@ -168,7 +168,7 @@ namespace MyTransportApp
             this.comboboxvon.Location = new System.Drawing.Point(69, 38);
             this.comboboxvon.Name = "comboboxvon";
             this.comboboxvon.Size = new System.Drawing.Size(121, 28);
-            this.comboboxvon.TabIndex = 9;
+            this.comboboxvon.TabIndex = 5;
             this.comboboxvon.TextUpdate += new System.EventHandler(this.Vorschlage);
             // 
             // datimZeit
@@ -252,7 +252,7 @@ namespace MyTransportApp
             this.btnsuchen.Location = new System.Drawing.Point(551, 87);
             this.btnsuchen.Name = "btnsuchen";
             this.btnsuchen.Size = new System.Drawing.Size(129, 33);
-            this.btnsuchen.TabIndex = 5;
+            this.btnsuchen.TabIndex = 10;
             this.btnsuchen.Text = "Suchen";
             this.btnsuchen.UseVisualStyleBackColor = true;
             this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
@@ -263,7 +263,7 @@ namespace MyTransportApp
             this.lblnach.Location = new System.Drawing.Point(224, 41);
             this.lblnach.Name = "lblnach";
             this.lblnach.Size = new System.Drawing.Size(46, 20);
-            this.lblnach.TabIndex = 2;
+            this.lblnach.TabIndex = 15;
             this.lblnach.Text = "Nach";
             // 
             // lblvon
@@ -272,7 +272,7 @@ namespace MyTransportApp
             this.lblvon.Location = new System.Drawing.Point(25, 40);
             this.lblvon.Name = "lblvon";
             this.lblvon.Size = new System.Drawing.Size(38, 20);
-            this.lblvon.TabIndex = 0;
+            this.lblvon.TabIndex = 16;
             this.lblvon.Text = "Von";
             // 
             // Verbindungen

@@ -52,7 +52,7 @@ namespace MyTransportApp
             this.grpboxmenue.Location = new System.Drawing.Point(49, 13);
             this.grpboxmenue.Name = "grpboxmenue";
             this.grpboxmenue.Size = new System.Drawing.Size(695, 71);
-            this.grpboxmenue.TabIndex = 0;
+            this.grpboxmenue.TabIndex = 12;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
             // 
@@ -106,7 +106,7 @@ namespace MyTransportApp
             this.grpboxNaechsteStation.Location = new System.Drawing.Point(49, 125);
             this.grpboxNaechsteStation.Name = "grpboxNaechsteStation";
             this.grpboxNaechsteStation.Size = new System.Drawing.Size(682, 313);
-            this.grpboxNaechsteStation.TabIndex = 1;
+            this.grpboxNaechsteStation.TabIndex = 11;
             this.grpboxNaechsteStation.TabStop = false;
             this.grpboxNaechsteStation.Text = "Nächste Station";
             // 
@@ -121,7 +121,7 @@ namespace MyTransportApp
             this.dgvNaechsteStation.RowHeadersWidth = 62;
             this.dgvNaechsteStation.RowTemplate.Height = 28;
             this.dgvNaechsteStation.Size = new System.Drawing.Size(666, 282);
-            this.dgvNaechsteStation.TabIndex = 2;
+            this.dgvNaechsteStation.TabIndex = 10;
             // 
             // columnstation
             // 

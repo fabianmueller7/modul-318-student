@@ -51,7 +51,7 @@ namespace MyTransportApp
             this.grpboxmenue.Location = new System.Drawing.Point(34, 12);
             this.grpboxmenue.Name = "grpboxmenue";
             this.grpboxmenue.Size = new System.Drawing.Size(692, 76);
-            this.grpboxmenue.TabIndex = 0;
+            this.grpboxmenue.TabIndex = 12;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
             // 
@@ -60,7 +60,7 @@ namespace MyTransportApp
             this.button1.Location = new System.Drawing.Point(399, 26);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 38);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Nächste Station";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.NaechsteStation_Click);
@@ -107,7 +107,7 @@ namespace MyTransportApp
             this.grpboxKarte.Location = new System.Drawing.Point(49, 112);
             this.grpboxKarte.Name = "grpboxKarte";
             this.grpboxKarte.Size = new System.Drawing.Size(677, 326);
-            this.grpboxKarte.TabIndex = 1;
+            this.grpboxKarte.TabIndex = 11;
             this.grpboxKarte.TabStop = false;
             this.grpboxKarte.Text = "Karte";
             // 
@@ -116,7 +116,7 @@ namespace MyTransportApp
             this.btnSucheStaton.Location = new System.Drawing.Point(129, 17);
             this.btnSucheStaton.Name = "btnSucheStaton";
             this.btnSucheStaton.Size = new System.Drawing.Size(170, 45);
-            this.btnSucheStaton.TabIndex = 2;
+            this.btnSucheStaton.TabIndex = 5;
             this.btnSucheStaton.Text = "Suche Station";
             this.btnSucheStaton.UseVisualStyleBackColor = true;
             this.btnSucheStaton.Click += new System.EventHandler(this.btnSucheStaton_Click);
@@ -126,7 +126,7 @@ namespace MyTransportApp
             this.txtboxstation.Location = new System.Drawing.Point(7, 26);
             this.txtboxstation.Name = "txtboxstation";
             this.txtboxstation.Size = new System.Drawing.Size(116, 26);
-            this.txtboxstation.TabIndex = 1;
+            this.txtboxstation.TabIndex = 4;
             // 
             // gmapKarte
             // 
@@ -154,7 +154,7 @@ namespace MyTransportApp
             this.gmapKarte.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gmapKarte.ShowTileGridLines = false;
             this.gmapKarte.Size = new System.Drawing.Size(660, 244);
-            this.gmapKarte.TabIndex = 0;
+            this.gmapKarte.TabIndex = 10;
             this.gmapKarte.Zoom = 0D;
             // 
             // Karte

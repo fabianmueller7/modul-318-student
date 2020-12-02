@@ -58,7 +58,7 @@ namespace MyTransportApp
             this.grpboxmenue.Location = new System.Drawing.Point(48, 13);
             this.grpboxmenue.Name = "grpboxmenue";
             this.grpboxmenue.Size = new System.Drawing.Size(691, 77);
-            this.grpboxmenue.TabIndex = 0;
+            this.grpboxmenue.TabIndex = 13;
             this.grpboxmenue.TabStop = false;
             this.grpboxmenue.Text = "Menü";
             // 
@@ -115,7 +115,7 @@ namespace MyTransportApp
             this.grpboxabfahrtstafel.Location = new System.Drawing.Point(48, 112);
             this.grpboxabfahrtstafel.Name = "grpboxabfahrtstafel";
             this.grpboxabfahrtstafel.Size = new System.Drawing.Size(691, 326);
-            this.grpboxabfahrtstafel.TabIndex = 1;
+            this.grpboxabfahrtstafel.TabIndex = 12;
             this.grpboxabfahrtstafel.TabStop = false;
             this.grpboxabfahrtstafel.Text = "Abfahrtstafel";
             // 
@@ -134,7 +134,7 @@ namespace MyTransportApp
             this.dtagridAbfahrtstagel.RowHeadersWidth = 62;
             this.dtagridAbfahrtstagel.RowTemplate.Height = 28;
             this.dtagridAbfahrtstagel.Size = new System.Drawing.Size(678, 236);
-            this.dtagridAbfahrtstagel.TabIndex = 4;
+            this.dtagridAbfahrtstagel.TabIndex = 11;
             // 
             // columnnach
             // 
@@ -164,7 +164,7 @@ namespace MyTransportApp
             this.btnsuchen.Location = new System.Drawing.Point(539, 35);
             this.btnsuchen.Name = "btnsuchen";
             this.btnsuchen.Size = new System.Drawing.Size(102, 30);
-            this.btnsuchen.TabIndex = 3;
+            this.btnsuchen.TabIndex = 5;
             this.btnsuchen.Text = "Suchen";
             this.btnsuchen.UseVisualStyleBackColor = true;
             this.btnsuchen.Click += new System.EventHandler(this.btnsuchen_Click);
@@ -174,7 +174,7 @@ namespace MyTransportApp
             this.txtboxstation.Location = new System.Drawing.Point(85, 34);
             this.txtboxstation.Name = "txtboxstation";
             this.txtboxstation.Size = new System.Drawing.Size(100, 26);
-            this.txtboxstation.TabIndex = 1;
+            this.txtboxstation.TabIndex = 4;
             // 
             // lblstation
             // 
@@ -182,7 +182,7 @@ namespace MyTransportApp
             this.lblstation.Location = new System.Drawing.Point(19, 35);
             this.lblstation.Name = "lblstation";
             this.lblstation.Size = new System.Drawing.Size(60, 20);
-            this.lblstation.TabIndex = 0;
+            this.lblstation.TabIndex = 10;
             this.lblstation.Text = "Station";
             // 
             // Abfahrtsplan
